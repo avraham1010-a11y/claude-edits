@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>טק-קריירה | הדרך שלך להייטק</title>
+<link rel="canonical" href="https://www.tech-career.org/blank-2">
+<meta property="og:url" content="https://www.tech-career.org/blank-2">
+<meta property="og:title" content="טק-קריירה | הדרך שלך להייטק">
+<meta property="og:description" content="הכשרה טכנולוגית מוסמכת. קורסי סייבר, ענן ופיתוח. 90% השמה. הגישו מועמדות עכשיו.">
+<meta property="og:image" content="https://static.wixstatic.com/media/66f4ce_83faed0169604df584ecd3da6be92937~mv2.png">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+/* הסתרת פסי גלילה — כל הדף */
+html,body{scrollbar-width:none;-ms-overflow-style:none;overflow-x:hidden}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
+:root{
+  --sky:#38BDF8;--sky2:#0EA5E9;--navy:#0F172A;--slate:#1E3A5F;
+  --orange:#F5A623;--red:#E8472A;--white:#fff;--light:#F0F9FF;
+  --muted:#64748B;--border:#E0F2FE;
+}
+body{font-family:'Heebo',sans-serif;color:var(--navy);background:var(--light);overflow-x:hidden}
+a{text-decoration:none}
+img{max-width:100%;display:block}
+
+
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0C1F3F 0%,#0F2D5A 45%,#103A6E 100%);padding:60px 24px 80px;text-align:center;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.hero-orb1{position:absolute;top:-10%;right:-5%;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.15) 0%,transparent 70%);pointer-events:none}
+.hero-orb2{position:absolute;bottom:-10%;left:-5%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.1) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);border-radius:50px;padding:6px 18px;margin-bottom:24px}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--sky);box-shadow:0 0 8px var(--sky)}
+.hero-badge span{color:var(--sky);font-size:12px;font-weight:700;letter-spacing:.5px}
+.hero h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(38px,7vw,72px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:20px;letter-spacing:-1px}
+.hero h1 em{color:var(--sky);font-style:normal;text-shadow:0 0 30px rgba(56,189,248,.5)}
+.hero-sub{font-size:clamp(15px,2.2vw,18px);color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:28px;max-width:560px;margin-left:auto;margin-right:auto}
+.hero-quote{background:rgba(255,255,255,.05);border:1px solid rgba(56,189,248,.15);border-right:3px solid var(--sky);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:right}
+.hero-quote p{color:rgba(255,255,255,.8);font-style:italic;font-size:14px;line-height:1.8}
+.hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.stat-num{font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--sky);line-height:1;text-shadow:0 0 20px rgba(56,189,248,.4)}
+.stat-label{color:rgba(255,255,255,.5);font-size:12px;margin-top:4px}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-red{background:linear-gradient(135deg,var(--red),#c0392b);color:#fff;padding:14px 30px;border-radius:10px;font-weight:800;font-size:15px;font-family:'Heebo',sans-serif;box-shadow:0 4px 20px rgba(232,71,42,.4);transition:.2s;display:inline-block}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,71,42,.5)}
+.btn-ghost{background:rgba(255,255,255,.06);color:#fff;padding:14px 30px;border-radius:10px;font-weight:600;font-size:15px;font-family:'Heebo',sans-serif;border:1px solid rgba(255,255,255,.2);transition:.2s;display:inline-block}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-wa{background:#25D366;color:#fff;padding:14px 22px;border-radius:10px;font-weight:800;font-size:15px;font-family:'Heebo',sans-serif;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:.2s}
+.btn-wa:hover{transform:translateY(-2px)}
+
+/* STATS BAR */
+.stats-bar{background:var(--sky);padding:16px 24px}
+.stats-bar-inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px}
+.stats-bar-item{display:flex;align-items:center;gap:8px}
+.stats-bar-item span{color:var(--navy);font-weight:700;font-size:13px}
+
+/* SECTIONS */
+section{padding:72px 24px}
+.inner{max-width:1060px;margin:0 auto}
+.pill{display:inline-flex;align-items:center;gap:6px;background:rgba(56,189,248,.12);color:var(--sky2);font-size:11px;font-weight:800;padding:5px 14px;border-radius:50px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;border:1px solid rgba(14,165,233,.2)}
+.pill-light{background:rgba(56,189,248,.15);color:var(--sky);border-color:rgba(56,189,248,.3)}
+.sec-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(24px,3.5vw,38px);font-weight:900;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.sec-title-white{color:#fff}
+.sec-sub{color:var(--muted);font-size:15px;line-height:1.7}
+
+/* ABOUT */
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-text p{color:var(--muted);font-size:15px;line-height:1.85;margin-bottom:16px}
+.qblock{background:var(--light);border-right:4px solid var(--sky);border-radius:10px;padding:18px 20px}
+.qblock p{font-style:italic;font-size:14px;line-height:1.8;color:var(--navy)}
+.qblock cite{color:var(--muted);font-size:12px;display:block;margin-top:8px}
+.stats-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{border-radius:14px;padding:20px 16px;position:relative;overflow:hidden;border:1px solid transparent}
+.stat-card-num{font-size:22px;font-weight:900;margin-bottom:6px}
+.stat-card-txt{color:var(--muted);font-size:13px;line-height:1.4}
+
+/* SERVICES */
+.services{background:var(--light)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
+.svc-card{background:#fff;border-radius:14px;padding:26px 22px;border:1px solid #E8F4FD;box-shadow:0 2px 12px rgba(14,165,233,.06);position:relative;overflow:hidden;transition:.25s}
+.svc-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(14,165,233,.12)}
+.svc-card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px}
+.svc-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.svc-card h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:7px}
+.svc-card p{color:var(--muted);font-size:13px;line-height:1.75}
+
+/* COURSES */
+.courses{background:linear-gradient(160deg,#0C1F3F 0%,#0F2D5A 100%)}
+.c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:36px;margin-bottom:36px}
+.c-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.c-card:hover{background:rgba(255,255,255,.08);border-color:rgba(56,189,248,.3)}
+.c-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,#1E3A5F,#0F172A);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.c-img img{width:100%;height:100%;object-fit:cover}
+.c-img-placeholder{text-align:center;color:rgba(255,255,255,.3);font-size:13px}
+.c-img-placeholder div:first-child{font-size:32px;margin-bottom:8px}
+.c-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,31,63,.7) 0%,transparent 60%);pointer-events:none}
+.c-tag-on-img{position:absolute;bottom:12px;right:14px;border-radius:50px;font-size:11px;font-weight:800;padding:4px 12px}
+.c-body{padding:20px 20px 22px;flex:1;display:flex;flex-direction:column}
+.c-body h3{color:#fff;font-size:16px;font-weight:800;margin-bottom:14px;line-height:1.3}
+.c-pts{list-style:none}
+.c-pts li{color:rgba(255,255,255,.7);font-size:13px;padding:7px 0;display:flex;gap:10px;border-bottom:1px solid rgba(255,255,255,.06);align-items:flex-start}
+.c-pts li:last-child{border-bottom:none}
+.c-pts li::before{content:"✓";font-weight:900;flex-shrink:0;margin-top:1px}
+.courses-cta{text-align:center}
+.courses-cta p{color:rgba(255,255,255,.55);margin-bottom:18px;font-size:15px}
+
+/* TESTIMONIALS — responsive carousel */
+.testimonials{background:#fff}
+.tc-carousel{overflow:hidden;padding-bottom:60px;user-select:none}
+.tc-track{display:flex;transition:transform .45s cubic-bezier(.25,.8,.25,1);will-change:transform}
+.tc-slide{flex:0 0 calc(33.333% - 13px);margin-left:0;padding:0 9px}
+.tc-card{background:#fff;border-radius:16px;padding:24px 20px;border:1px solid #E8F4FD;box-shadow:0 4px 20px rgba(14,165,233,.08);display:flex;flex-direction:column;height:100%;transition:.2s}
+.tc-card:hover{border-color:var(--sky);box-shadow:0 8px 28px rgba(56,189,248,.15)}
+.tc-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.t-avatar{width:58px;height:58px;border-radius:50%;border:3px solid var(--sky);flex-shrink:0;object-fit:cover}
+.t-avatar-fallback{width:58px;height:58px;border-radius:50%;border:3px solid var(--sky);flex-shrink:0;background:var(--slate);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--sky);font-size:20px}
+.tc-name{font-weight:800;color:var(--navy);font-size:14px}
+.tc-role{color:var(--muted);font-size:12px;margin-top:2px}
+.tc-badge{display:inline-block;margin-top:4px;background:var(--light);color:var(--sky2);font-size:10px;font-weight:700;padding:2px 8px;border-radius:50px}
+.tc-stars{color:#FBBF24;font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.tc-quote{color:#334155;font-size:13px;line-height:1.85;font-style:italic;flex:1}
+.tc-arrow{position:absolute;bottom:0;width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;font-size:22px;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:10}
+.tc-arrow:hover{background:var(--sky);color:var(--navy)}
+.tc-arrow-prev{right:60px}
+.tc-arrow-next{right:8px}
+.tc-dots{position:absolute;bottom:12px;left:50%;transform:translateX(50%);display:flex;gap:7px;align-items:center}
+.tc-dot{height:7px;border-radius:4px;cursor:pointer;transition:all .25s;background:#CBD5E1;border:none;padding:0}
+.tc-dot.on{width:22px;background:var(--sky)}
+.tc-dot:not(.on){width:7px;border-radius:50%}
+@media(max-width:900px){.tc-slide{flex:0 0 calc(50% - 9px)}}
+@media(max-width:580px){.tc-slide{flex:0 0 100%;padding:0 4px}.tc-arrow-prev{right:52px}.tc-arrow-next{right:4px}}
+
+/* PARTNERS */
+.partners{background:var(--light)}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.p-slot{background:#fff;border-radius:12px;border:1px solid var(--border);padding:16px 12px;display:flex;align-items:center;justify-content:center;min-height:78px;overflow:hidden;transition:.2s}
+.p-slot:hover{border-color:var(--sky);box-shadow:0 4px 16px rgba(56,189,248,.12)}
+.p-slot img{max-height:48px;max-width:120px;object-fit:contain;filter:grayscale(20%);transition:.25s}
+.p-slot:hover img{filter:grayscale(0%)}
+
+/* CTA */
+.cta-sec{background:linear-gradient(135deg,var(--sky2),#0284C7);padding:72px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:2}
+.cta-inner h2{font-family:'Frank Ruhl Libre',serif;font-size:clamp(26px,4vw,42px);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.15}
+.cta-inner p{color:rgba(255,255,255,.75);font-size:16px;line-height:1.75;margin-bottom:32px}
+.cta-note{margin-top:24px;padding:14px 20px;background:rgba(255,255,255,.1);border-radius:10px;backdrop-filter:blur(8px)}
+.cta-note p{color:rgba(255,255,255,.65);font-size:13px;margin:0}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.45);padding:28px 20px;text-align:center;font-size:13px}
+footer strong{color:#fff}
+footer a{color:var(--sky)}
+footer p+p{margin-top:7px;font-size:11px}
+
+
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .about-grid{grid-template-columns:1fr}
+  .stats-cards{grid-template-columns:1fr 1fr}
+  .p-grid{grid-template-columns:repeat(2,1fr)}
+  .t-card{min-width:88%}
+}
+@media(max-width:768px){
+  .hero h1{font-size:38px !important}
+  .stats-bar-inner{justify-content:center;gap:14px}
+  #cta{padding:48px 16px !important}
+  #mondayWrapper iframe{height:1200px !important}
+}
+@media(max-width:480px){
+  nav{padding:10px 16px}
+  section{padding:48px 16px}
+  .hero{padding:80px 16px 60px;min-height:auto}
+  .hero h1{font-size:34px !important}
+  .hero-btns{flex-direction:column;align-items:center}
+  .btn-red,.btn-ghost,.btn-wa{width:100%;justify-content:center}
+  .hero-stats{gap:20px}
+  .c-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .t-card{min-width:92%}
+  .stats-bar-inner{justify-content:flex-start;gap:12px}
+  #cta{padding:40px 12px !important}
+  #mondayWrapper{max-width:100% !important;border-radius:12px !important}
+  #mondayWrapper iframe{height:1300px !important;min-height:1300px !important}
+  .pill{font-size:10px;padding:4px 10px}
+}
+@media(max-width:360px){
+  .hero h1{font-size:30px !important}
+  #mondayWrapper iframe{height:1400px !important}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>מסלולי הכשרה טכנולוגית פתוחים לרישום</span>
+    </div>
+    <h1>עושים <em>טק</em>,<br>עושים <em>קריירה</em></h1>
+    <p class="hero-sub">טק-קריירה מכשירה צעירים יוצאי אתיופיה לקריירה בהייטק — עם הכשרה מקצועית, ליווי אישי והשמה בחברות המובילות בישראל.</p>
+    <div class="hero-quote">
+      <p>"תהליך המיון בטק-קריירה דומה לתהליך מיון ליחידות מובחרות, ואכן בסופו מתגבשת סיירת מופלאה, מפוצצת בכשרון ועם הרבה אש בעיניים."</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">90%</div><div class="stat-label">השמה בתעשייה</div></div>
+      <div class="stat"><div class="stat-num">20+</div><div class="stat-label">שנות ניסיון</div></div>
+      <div class="stat"><div class="stat-num">100+</div><div class="stat-label">בוגרים בהייטק</div></div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-red" href="#cta">הגש מועמדות עכשיו ←</a>
+      <a class="btn-ghost" href="#courses">הקורסים שלנו</a>
+      <a class="btn-wa" href="https://wa.me/972XXXXXXXXX" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.845L.057 23.571a.75.75 0 0 0 .923.899l5.857-1.535A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.953-1.355l-.355-.21-3.676.964.981-3.584-.231-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        וואטסאפ
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stats-bar-item"><span>&#127891;</span><span>הכרה מלאה ע"י משרד העבודה</span></div>
+    <div class="stats-bar-item"><span>&#128202;</span><span>מוכר כנקודות זכות במל"ג</span></div>
+    <div class="stats-bar-item"><span>&#128188;</span><span>90% השמה בתעשייה</span></div>
+    <div class="stats-bar-item"><span>&#128205;</span><span>הבעל שם טוב 6, לוד</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="rv">
+        <div class="pill">אודות העמותה</div>
+        <h2 class="sec-title">הכרטיס שלך<br>לעולם ההייטק</h2>
+        <p style="margin-top:14px">עמותת טק-קריירה קמה בשנת 2002 במטרה להקנות לצעירים יוצאי אתיופיה כרטיס כניסה לעולם ההייטק באמצעות הכשרה מקצועית איכותית ורלוונטית.</p>
+        <p>התכנית מציעה הכשרה טכנולוגית, סדנאות פיתוח אישי, ושירותי השמה. המשתתפים רוכשים ידע וכישורים להשתלב בתעשיית ההייטק הישראלית.</p>
+        <div class="qblock">
+          <p>"טק-קריירה מציעה תכנית ייחודית משולבת וחדשנית, המעניקה למשתתפים הזדמנות אמיתית לרכישת ידע, ניסיון וכישורים הדרושים להשתלב בתעשיית ההיי-טק הישראלית."</p>
+          
+        </div>
+      </div>
+      <div class="stats-cards rv">
+        <div class="stat-card" style="background:#EFF6FF;border-color:#3B82F622">
+          <div class="stat-card-num" style="color:#3B82F6">90%</div>
+          <div class="stat-card-txt">מהבוגרים מועסקים בהייטק</div>
+        </div>
+        <div class="stat-card" style="background:#F0FDF4;border-color:#22C55E22">
+          <div class="stat-card-num" style="color:#22C55E">20+</div>
+          <div class="stat-card-txt">שנות ניסיון מוכח</div>
+        </div>
+        <div class="stat-card" style="background:#FFF7ED;border-color:#F9731622">
+          <div class="stat-card-num" style="color:#F97316">הכרה</div>
+          <div class="stat-card-txt">מוכר במשרד העבודה ובמל"ג</div>
+        </div>
+        <div class="stat-card" style="background:#FDF2F8;border-color:#A855F722">
+          <div class="stat-card-num" style="color:#A855F7;font-size:18px">&#128205; מיקום</div>
+          <div class="stat-card-txt">הבעל שם טוב 6, לוד</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="inner">
+    <div class="rv">
+      <div class="pill">מה אנחנו מציעים</div>
+      <h2 class="sec-title">מסלולי הכשרה וליווי מקצועי</h2>
+      <p class="sec-sub">תכנית משולבת שמלווה אתכם מהכשרה ועד להשמה.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card rv" style="--a:#0EA5E9"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#0EA5E9"></div><div class="svc-icon" style="background:#0EA5E915">&#127891;</div><h3>הכשרה טכנולוגית מוסמכת</h3><p>מסלולים בעלי הכרה רשמית ע"י משרד העבודה ומוכרים כנקודות זכות במל"ג.</p></div>
+      <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#8B5CF6"></div><div class="svc-icon" style="background:#8B5CF615">&#129504;</div><h3>פיתוח אישי והעשרה</h3><p>סדנאות פיתוח אישי, כישורים רכים והכנה לראיונות עבודה.</p></div>
+      <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#10B981"></div><div class="svc-icon" style="background:#10B98115">&#129309;</div><h3>ליווי אישי ומקצועי</h3><p>מנטורינג מצד מנהלים מתעשיית ההייטק לאורך כל הדרך.</p></div>
+      <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#F97316"></div><div class="svc-icon" style="background:#F9731615">&#128188;</div><h3>שירותי השמה</h3><p>קשרים עם חברות מובילות — 90% השמה מוכחת.</p></div>
+      <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#EC4899"></div><div class="svc-icon" style="background:#EC489915">&#128187;</div><h3>מעבדות מחשבים חדישות</h3><p>גישה לתשתיות טכנולוגיות מתקדמות ברמה תעשייתית.</p></div>
+      <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#22C55E"></div><div class="svc-icon" style="background:#22C55E15">&#128176;</div><h3>מלגות מחייה</h3><p>סטודנטים בפנימייה מקבלים מלגות מחייה לאורך ההכשרה.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses" id="courses">
+  <div class="inner">
+    <div class="rv">
+      <div class="pill pill-light">הקורסים שלנו</div>
+      <h2 class="sec-title sec-title-white">4 סיבות לבחור בנו</h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,.55)">קורסים שנבנו עם תעשייה, ביקוש אמיתי, ומסלול ישיר לעבודה.</p>
+    </div>
+    <div class="c-grid">
+
+      <!-- קורס 1 -->
+      <div class="c-card rv">
+        <div class="c-img">
+          <img src="https://static.wixstatic.com/media/955558_28854d545a284bfbb24b73e02e2b1441~mv2.jpg/v1/fill/w_600,h_340,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D7%91%D7%95%D7%92%D7%A8%D7%99%D7%9D%20%D7%95%D7%90%D7%91%D7%99%D7%92%D7%99%D7%9C.jpg"
+            onerror="this.parentNode.innerHTML='<div class=c-img-placeholder><div>&#127760;</div><div>תמונת קורס</div></div>'" alt="קורס ענן">
+          <div class="c-img-overlay"></div>
+          <span class="c-tag-on-img" style="background:rgba(56,189,248,.2);border:1px solid rgba(56,189,248,.4);color:#38BDF8">&#127760; ענן וסייבר</span>
+        </div>
+        <div class="c-body">
+          <h3>קורס תקשורת ענן היברידי</h3>
+          <ul class="c-pts">
+            <li style="--c:#38BDF8"><span style="color:#38BDF8">✓</span>יסודות החומרה ומערכות הפעלה</li>
+            <li><span style="color:#38BDF8">✓</span>יצירת ושימוש בסוכן AI לפתרון תקלות</li>
+            <li><span style="color:#38BDF8">✓</span>אבטחת רשת בסיסית</li>
+            <li><span style="color:#38BDF8">✓</span>הכשרה ברשתות ענן ו-On-Premise</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- קורס 2 -->
+      <div class="c-card rv">
+        <div class="c-img">
+          <img src="https://static.wixstatic.com/media/955558_6b2039e7473047e2923c520dd241c45b~mv2.jpeg/v1/fill/w_600,h_340,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202024-03-20%20at%2017_48_38.jpeg"
+            onerror="this.parentNode.innerHTML='<div class=c-img-placeholder><div>&#128274;</div><div>תמונת קורס</div></div>'" alt="קורס סייבר">
+          <div class="c-img-overlay"></div>
+          <span class="c-tag-on-img" style="background:rgba(167,139,250,.2);border:1px solid rgba(167,139,250,.4);color:#A78BFA">&#128274; סייבר</span>
+        </div>
+        <div class="c-body">
+          <h3>קורס תקשורת סייבר היברידי</h3>
+          <ul class="c-pts">
+            <li><span style="color:#A78BFA">✓</span>CCNA — יסודות אבטחת המידע</li>
+            <li><span style="color:#A78BFA">✓</span>שליטה במערכות הפעלה וניהול הרשאות</li>
+            <li><span style="color:#A78BFA">✓</span>זיהוי איומי סייבר באמצעות AI</li>
+            <li><span style="color:#A78BFA">✓</span>התנסות מעשית במערכות המתקדמות</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- קורס 3 -->
+      <div class="c-card rv">
+        <div class="c-img">
+          <img src="https://static.wixstatic.com/media/66f4ce_b77e82eaa8cc44bdac99bd1fbf347891~mv2.jpeg/v1/fill/w_600,h_340,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/25184EA7-34DD-4DA2-B9B9-2A1A69081CC9_1_105_c.jpeg"
+            onerror="this.parentNode.innerHTML='<div class=c-img-placeholder><div>&#9729;&#65039;</div><div>תמונת קורס</div></div>'" alt="קורסים נוספים">
+          <div class="c-img-overlay"></div>
+          <span class="c-tag-on-img" style="background:rgba(52,211,153,.2);border:1px solid rgba(52,211,153,.4);color:#34D399">&#9729;&#65039; פיתוח</span>
+        </div>
+        <div class="c-body">
+          <h3>קורסים נוספים בפיתוח ו-IT</h3>
+          <ul class="c-pts">
+            <li><span style="color:#34D399">✓</span>Full Stack Development</li>
+            <li><span style="color:#34D399">✓</span>Salesforce מיישמ.ת — תפקיד מבוקש</li>
+            <li><span style="color:#34D399">✓</span>תשתיות IT ותמיכה טכנית</li>
+            <li><span style="color:#34D399">✓</span>מסלולים מותאמים לשוק הישראלי</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="courses-cta rv">
+      <p>מוכנ/ת להתחיל? המיון שלנו קפדני — וזה בדיוק מה שהופך אותך למבוקש/ת.</p>
+      <a class="btn-red" href="#cta">אני רוצה להגיש מועמדות ←</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="inner">
+    <div class="rv">
+      <div class="pill">בוגרי העמותה</div>
+      <h2 class="sec-title">הם כבר עשו את זה</h2>
+      <p class="sec-sub">בוגרי טק-קריירה עובדים כיום בחברות ההייטק המובילות בישראל.</p>
+    </div>
+
+    <div class="tc-carousel rv" style="margin-top:36px;position:relative">
+      <div class="tc-track" id="tcTrack">
+
+        <!-- מדלן טדלה — ציטוט מהאתר הרשמי -->
+        <div class="tc-slide">
+          <div class="tc-card">
+            <div class="tc-top">
+              <div class="t-avatar-fallback">מ</div>
+              <div>
+                <div class="tc-name">מדלן טדלה</div>
+                <div class="tc-role">FSE · Cognyte</div>
+                <span class="tc-badge">בוגרת קורס תקשורת ואבטחת מידע 2024</span>
+              </div>
+            </div>
+            <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="tc-quote">"לאורך עשרת החודשים של למידה מעשירה ומאתגרת, טק-קריירה הייתה עבורי הרבה יותר ממקום לימודים. הצוות המדהים ליווה אותי בכל צעד בדרך, סיפק לי כלים להתמודד עם האתגרים והעניק לי תמיכה בלתי פוסקת."</p>
+          </div>
+        </div>
+
+        <!-- שרה וונדה — ציטוט מהאתר הרשמי -->
+        <div class="tc-slide">
+          <div class="tc-card">
+            <div class="tc-top">
+              <div class="t-avatar-fallback">ש</div>
+              <div>
+                <div class="tc-name">שרה וונדה</div>
+                <div class="tc-role">Data Center Engineer · Amazon</div>
+                <span class="tc-badge">בוגרת טק-קריירה</span>
+              </div>
+            </div>
+            <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="tc-quote">"טק-קריירה היא הרבה יותר ממוסד לימודי – זו משפחה. לא תמצאו מקום שמעניק מעטפת מקיפה כל כך, שמלמד, מחנך, מחבק ומלווה אותך לכל אורך הדרך. כל מה שצריך זה רצון להצליח ונכונות להשקיע."</p>
+          </div>
+        </div>
+
+        <!-- אלמיטו ימסה — ציטוט מהאתר הרשמי -->
+        <div class="tc-slide">
+          <div class="tc-card">
+            <div class="tc-top">
+              <div class="t-avatar-fallback">א</div>
+              <div>
+                <div class="tc-name">אלמיטו ימסה</div>
+                <div class="tc-role">מפתחת אוטומציה · טולונה</div>
+                <span class="tc-badge">בוגרת קורס פיתוח 2020</span>
+              </div>
+            </div>
+            <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="tc-quote">"טק-קריירה נתנו לי את הכלים להאמין בעצמי מחדש, לבנות רשת חברתית-מקצועית ולהגשים חלום — להשתלב בהייטק. אני גאה להיות חלק מהקהילה המדהימה שטק-קריירה יצרה."</p>
+          </div>
+        </div>
+
+        <!-- שואנש אבבה — ציטוט מהאתר הרשמי -->
+        <div class="tc-slide">
+          <div class="tc-card">
+            <div class="tc-top">
+              <div class="t-avatar-fallback">ש</div>
+              <div>
+                <div class="tc-name">שואנש אבבה</div>
+                <div class="tc-role">מהנדסת תוכנה · AT&T</div>
+                <span class="tc-badge">בוגרת קורס פיתוח 2020</span>
+              </div>
+            </div>
+            <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="tc-quote">"במשך שמונה חודשים עברתי מסע מאתגר שכלל שלוש הסמכות ולמידה אינטנסיבית. הכרתי אנשים מדהימים שהפכו למשפחה. צוות טק-קריירה היה שם בשבילי בכל צעד — לתמוך, לעודד ולעזור להתגבר על כל מכשול."</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- כפתורי ניווט -->
+      <button class="tc-arrow tc-arrow-prev" id="tcPrev" aria-label="הקודם">&#8250;</button>
+      <button class="tc-arrow tc-arrow-next" id="tcNext" aria-label="הבא">&#8249;</button>
+
+      <!-- נקודות -->
+      <div class="tc-dots" id="tcDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="inner">
+    <div class="rv" style="text-align:center;margin-bottom:36px">
+      <div class="pill">שותפיות ומעסיקים</div>
+      <h2 class="sec-title">הגופים שמאמינים בדרך שלנו</h2>
+      <p class="sec-sub">ארגונים מובילים, מוסדות ציבוריים וחברות הייטק גלובליות — שותפים לדרך.</p>
+    </div>
+    <div class="p-grid rv">
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_7a4791ff98034f3a92f18ef3eed1edf5~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_7a4791ff98034f3a92f18ef3eed1edf5~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 1"></div>
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_17c6d58bf3ae4f8186d3e9904446a367~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_17c6d58bf3ae4f8186d3e9904446a367~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 2"></div>
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_cfefc78a298146f5acfe3a9838572b56~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_cfefc78a298146f5acfe3a9838572b56~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 3"></div>
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_b5f7bd68017f4053ad5a082ca1d5659a~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_b5f7bd68017f4053ad5a082ca1d5659a~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 4"></div>
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_b0d07615978e4e1789064bfb8b6e1341~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_b0d07615978e4e1789064bfb8b6e1341~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 5"></div>
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_c454635d4b8641aa8eddd290a3d8d5cf~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_c454635d4b8641aa8eddd290a3d8d5cf~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 6"></div>
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_3b594d53bf604f0d82fffbf502192597~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_3b594d53bf604f0d82fffbf502192597~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 7"></div>
+      <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_1f86b9f05f044401bce7ddb6ee42ec12~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_1f86b9f05f044401bce7ddb6ee42ec12~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 8"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MONDAY FORM PLACEHOLDER -->
+<section id="cta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);padding:72px 24px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none"></div>
+  <div style="max-width:700px;margin:0 auto;position:relative;z-index:2;text-align:center">
+    <div class="pill pill-light" style="margin-bottom:14px">הגשת מועמדות</div>
+    <h2 style="font-family:'Frank Ruhl Libre',serif;font-size:clamp(26px,4vw,40px);font-weight:900;color:#fff;margin-bottom:12px;line-height:1.15">מוכנ/ת לעשות<br>את הצעד?</h2>
+    <p style="color:rgba(255,255,255,.75);font-size:16px;line-height:1.75;margin-bottom:36px">מלאו את הפרטים ונציג מטק-קריירה יחזור אליכם בהקדם.</p>
+    <!-- טופס Monday -->
+    <div id="mondayWrapper" style="width:100%;max-width:700px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:5px 5px 56px 0px rgba(0,0,0,0.35)">
+      <iframe id="mondayForm"
+        src="https://forms.monday.com/forms/embed/6ed512c4ae56979e8b97622600ce8708?r=use1"
+        width="100%" height="1100" scrolling="no"
+        style="border:0;display:block;overflow:hidden;scrollbar-width:none;-ms-overflow-style:none">
+      </iframe>
+    </div>
+    <style>
+      #mondayForm::-webkit-scrollbar{display:none;width:0;height:0}
+      #mondayForm{scrollbar-width:none !important}
+    </style>
+
+    <script>
+    // ── כתובת הדף הנחיתה ──
+var LANDING_URL = "https://www.tech-career.org/blank-2";
+
+// ── הוספת UTM אוטומטית לכניסות מהאתר ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+
+  // אם אין utm_source — הוסף website/organic
+  if (!params.get('utm_source')) {
+    var url = new URL(window.location.href);
+    url.searchParams.set('utm_source', 'website');
+    url.searchParams.set('utm_medium', 'organic');
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  // קרא פרמטרים מחדש אחרי העדכון
+  var p2 = new URLSearchParams(window.location.search);
+  var collected = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_adset','adset_name','ad_name','fbclid','gclid','ref','page_name','button_location','utm_referrer'].forEach(function(k){
+    var v = p2.get(k); if(v) collected[k] = v;
+  });
+
+  // הוסף אוטומטית referrer אם הגיע מדף אחר
+  if (!collected.utm_referrer && document.referrer) {
+    try {
+      var ref = new URL(document.referrer);
+      collected.utm_referrer = ref.pathname;
+    } catch(e){}
+  }
+
+  // ── DEBUG ברור בConsole ──
+  console.log('%c ====== טק-קריירה UTM Debug ======', 'background:#F5A623;color:#0F172A;font-size:15px;font-weight:bold;padding:6px 14px;border-radius:4px');
+  console.log('%c utm_source: '      + (collected.utm_source      || '❌ ריק'), 'color:#38BDF8;font-size:13px;font-weight:bold');
+  console.log('%c utm_medium: '      + (collected.utm_medium      || '❌ ריק'), 'color:#38BDF8;font-size:13px');
+  console.log('%c utm_campaign: '    + (collected.utm_campaign    || '❌ ריק'), 'color:#38BDF8;font-size:13px');
+  console.log('%c utm_content: '     + (collected.utm_content     || '❌ ריק'), 'color:#38BDF8;font-size:13px');
+  console.log('%c utm_adset: '       + (collected.utm_adset       || '❌ ריק'), 'color:#38BDF8;font-size:13px');
+  console.log('%c page_name: '       + (collected.page_name       || '❌ ריק'), 'color:#A78BFA;font-size:13px');
+  console.log('%c button_location: ' + (collected.button_location || '❌ ריק'), 'color:#A78BFA;font-size:13px');
+  console.log('%c utm_referrer: '    + (collected.utm_referrer    || '❌ ריק'), 'color:#A78BFA;font-size:13px');
+  console.log('%c fbclid: '          + (collected.fbclid          || '❌ ריק'), 'color:#38BDF8;font-size:13px');
+  console.log('%c ================================', 'background:#F5A623;color:#0F172A;font-size:13px;padding:4px 14px;border-radius:4px');
+
+  // העבר ל-iframe של Monday
+  var extraParams = '';
+  Object.keys(collected).forEach(function(k){ extraParams += '&' + k + '=' + encodeURIComponent(collected[k]); });
+  if (extraParams) {
+    var iframe = document.getElementById('mondayForm');
+    if (iframe) {
+      iframe.src = 'https://forms.monday.com/forms/embed/6ed512c4ae56979e8b97622600ce8708?r=use1' + extraParams;
+      console.log('%c URL שנשלח ל-Monday:', 'color:#22C55E;font-weight:bold;font-size:13px', iframe.src);
+    }
+  }
+
+  // שמור ב-sessionStorage
+  try { sessionStorage.setItem('tc_utm', JSON.stringify(collected)); } catch(e){}
+})();
+
+// ── התאמת גובה iframe דינמית לפי תוכן הטופס ──
+    window.addEventListener('message', function(e) {
+      // קבל הודעות רק מ-Monday
+      if (typeof e.origin === 'string' && e.origin.indexOf('monday.com') === -1) return;
+      if (!e.data) return;
+
+      var h = null;
+      // פורמטים שונים ש-Monday עשוי לשלוח
+      if (typeof e.data === 'number') {
+        h = e.data;
+      } else if (e.data.height) {
+        h = e.data.height;
+      } else if (e.data.type === 'resize' && e.data.value) {
+        h = e.data.value;
+      } else if (typeof e.data === 'string') {
+        try {
+          var parsed = JSON.parse(e.data);
+          if (parsed.height) h = parsed.height;
+        } catch(err) {}
+      }
+
+      if (h) {
+        var iframe = document.getElementById('mondayForm');
+        if (iframe) {
+          var newH = parseInt(h) + 20;
+          if (newH > 200) {  // הגנה מערכים קטנים מדי
+            iframe.style.height = newH + 'px';
+            iframe.style.minHeight = newH + 'px';
+          }
+        }
+      }
+    });
+    </script>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>טק-קריירה (ע"ר)</strong> &middot; הבעל שם טוב 6, לוד &middot; <a href="mailto:sara@tech-career.org">sara@tech-career.org</a> &middot; <a href="https://www.tech-career.org" target="_blank">tech-career.org</a></p>
+  <p>&copy; 2025 עמותת טק-קריירה. כל הזכויות שמורות.</p>
+</footer>
+
+<script>
+// Reveal on scroll
+var obs=new IntersectionObserver(function(es){es.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in')},i*70);obs.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+
+// ── Carousel ──
+(function(){
+  var track = document.getElementById('tcTrack');
+  if(!track) return;
+  var slides = track.querySelectorAll('.tc-slide');
+  var dotsEl = document.getElementById('tcDots');
+  var cur = 0, startX = 0, isDragging = false, dragDelta = 0;
+
+  function perView(){ var w=window.innerWidth; return w<580?1:w<900?2:3; }
+  function maxIdx(){ return Math.max(0, slides.length - perView()); }
+
+  function buildDots(){
+    dotsEl.innerHTML='';
+    for(var i=0;i<=maxIdx();i++){
+      var d=document.createElement('button');
+      d.className='tc-dot'+(i===cur?' on':'');
+      (function(idx){d.onclick=function(){goTo(idx);};})(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(n){
+    cur=Math.max(0,Math.min(n,maxIdx()));
+    var w=slides[0].getBoundingClientRect().width;
+    track.style.transform='translateX('+(cur*w)+'px)';
+    dotsEl.querySelectorAll('.tc-dot').forEach(function(d,i){d.classList.toggle('on',i===cur);});
+  }
+
+  document.getElementById('tcPrev').onclick=function(){goTo(cur-1);};
+  document.getElementById('tcNext').onclick=function(){goTo(cur+1);};
+
+  // Touch swipe
+  track.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;isDragging=true;},{passive:true});
+  track.addEventListener('touchmove',function(e){if(isDragging)dragDelta=e.touches[0].clientX-startX;},{passive:true});
+  track.addEventListener('touchend',function(){
+    if(!isDragging)return; isDragging=false;
+    if(dragDelta<-50)goTo(cur+1); else if(dragDelta>50)goTo(cur-1);
+    dragDelta=0;
+  });
+
+  // Mouse drag
+  track.addEventListener('mousedown',function(e){startX=e.clientX;isDragging=true;track.style.cursor='grabbing';});
+  window.addEventListener('mousemove',function(e){if(isDragging)dragDelta=e.clientX-startX;});
+  window.addEventListener('mouseup',function(){
+    if(!isDragging)return; isDragging=false; track.style.cursor='';
+    if(dragDelta<-60)goTo(cur+1); else if(dragDelta>60)goTo(cur-1);
+    dragDelta=0;
+  });
+
+  buildDots(); goTo(0);
+  window.addEventListener('resize',function(){buildDots();goTo(0);});
+})();
+</script>
+</body>
+</html>

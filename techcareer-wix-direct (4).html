@@ -6,429 +6,828 @@
 <title>טק קריירה × עולים ביחד</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Rubik:wght@400;500;600;700;800;900&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#0B2230;
     --ink-2:#163b50;
-    --teal:#13A89A;        /* טק קריירה */
+    --teal:#13A89A;
     --teal-d:#0c7d72;
     --teal-soft:#e3f4f1;
-    --coral:#F25C3B;       /* אנושי / CTA */
-    --gold:#D99A2B;        /* עולים ביחד */
+    --coral:#F25C3B;
+    --coral-d:#c0411f;
+    --gold:#D99A2B;
     --gold-soft:#f8eed4;
     --paper:#FBF9F4;
-    --card:#ffffff;
-    --line:#e9e4d9;
+    --paper-2:#F4EFE3;
+    --line:#d8d2c2;
+    --line-2:#ece6d6;
     --muted:#5d6b72;
-    --note-bg:#fff7e6;
-    --note-bd:#e9c87a;
-    --radius:20px;
-    --maxw:1140px;
-    font-synthesis:none;
+    --serif:"Frank Ruhl Libre", "Frank Ruhl", Georgia, serif;
+    --sans:"Rubik", sans-serif;
+    --body:"Assistant", system-ui, sans-serif;
+    --maxw:1180px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--paper); color:var(--ink);
-    font-family:"Assistant",system-ui,sans-serif; font-size:18px; line-height:1.7;
+    font-family:var(--body); font-size:18px; line-height:1.75;
     -webkit-font-smoothing:antialiased;
-    background-image:radial-gradient(circle at 1px 1px, rgba(11,34,48,.035) 1px, transparent 0);
-    background-size:26px 26px;
   }
-  h1,h2,h3,h4,.display{font-family:"Rubik",sans-serif; line-height:1.08; letter-spacing:-0.02em; margin:0}
+  h1,h2,h3,h4{margin:0; line-height:1.1; letter-spacing:-0.015em}
   p{margin:0 0 1em}
   a{color:inherit; text-decoration:none}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 26px}
-  .eyebrow{font-family:"Rubik";font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
-  .eyebrow.teal{color:var(--teal-d)} .eyebrow.gold{color:var(--gold)} .eyebrow.coral{color:var(--coral)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px}
+  @media (max-width:640px){.wrap{padding:0 22px}}
 
-  /* ---- entrance animation ---- */
-  .reveal{opacity:0; transform:translateY(22px); animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  /* labels */
+  .mono-label{
+    font-family:var(--sans); font-weight:600;
+    font-size:.78rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--muted); display:inline-block;
+  }
+  .mono-label::before{content:""; display:inline-block; width:28px; height:1px; background:currentColor; vertical-align:middle; margin-inline-end:12px; opacity:.6}
+
+  /* reveal */
+  .reveal{opacity:0; transform:translateY(20px); animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
   @keyframes rise{to{opacity:1; transform:none}}
 
-  /* ---- strategy notes ---- */
-  body.show-notes .note{display:block}
-  .note{display:none; background:var(--note-bg); border:1px dashed var(--note-bd); border-radius:14px;
-    padding:13px 16px; font-size:.85rem; color:#7a5d12; margin:18px 0 0; line-height:1.55}
-  .note b{color:#5e4709}
-  .note::before{content:"✎ "; font-weight:700}
+  /* sections */
+  section{padding:120px 0; position:relative}
+  @media (max-width:780px){section{padding:80px 0}}
 
-  .ph{display:flex; align-items:center; justify-content:center; text-align:center; color:var(--muted);
-    font-weight:600; border:2px dashed var(--line); border-radius:16px; min-height:120px; padding:20px;
-    background:linear-gradient(135deg,#fff, #faf8f2)}
+  /* ============ HERO ============ */
+  .hero{
+    position:relative; padding:34px 0 96px;
+    background:var(--paper); overflow:hidden;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+    background-image:radial-gradient(circle at 1px 1px, rgba(11,34,48,.06) 1px, transparent 0);
+    background-size:24px 24px;
+  }
+  .hero-top{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-bottom:30px; border-bottom:1px solid var(--line);
+    position:relative; z-index:2;
+  }
+  .hero-top .who{font-family:var(--sans); font-weight:700; font-size:.96rem; display:flex; align-items:center; gap:11px}
+  .hero-top .who .d{
+    width:9px;height:9px;border-radius:50%; background:var(--teal);
+    box-shadow:0 0 0 4px rgba(19,168,154,.18);
+  }
+  .hero-top .who span.x{color:var(--muted); font-weight:500; padding:0 4px; font-family:var(--serif); font-size:1.05rem}
+  .hero-top .apply{
+    display:inline-flex; align-items:center; gap:9px;
+    background:var(--coral); color:#fff;
+    font-family:var(--sans); font-weight:700; font-size:.92rem;
+    padding:11px 22px; border-radius:10px;
+    transition:background .15s ease;
+  }
+  .hero-top .apply::after{content:"←"; font-weight:900}
+  .hero-top .apply:hover{background:var(--coral-d)}
 
-  /* ---- nav ---- */
-  .nav{position:sticky; top:0; z-index:60; backdrop-filter:saturate(160%) blur(10px);
-    background:rgba(251,249,244,.82); border-bottom:1px solid var(--line)}
-  .nav .wrap{display:flex; align-items:center; gap:16px; height:68px}
-  .brand{font-family:"Rubik";font-weight:800;font-size:1.02rem;display:flex;align-items:center;gap:9px}
-  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(19,168,154,.22)}
-  .brand span.x{opacity:.4;font-weight:500}
-  .nav nav{margin-inline-start:auto; display:flex; gap:24px; font-size:.94rem; font-weight:600; color:var(--ink-2)}
-  .nav nav a:hover{color:var(--teal-d)}
-  .nav .apply{background:var(--coral); color:#fff; padding:9px 20px; border-radius:11px; font-family:"Rubik"; font-weight:700; font-size:.9rem}
-  .notebtn{font-size:.78rem;font-weight:700;cursor:pointer;background:transparent;border:1px solid var(--line);
-    color:var(--muted);border-radius:999px;padding:7px 13px}
-  @media(max-width:860px){.nav nav{display:none}}
+  .hero-main{
+    display:grid; grid-template-columns:1.08fr .92fr; gap:80px;
+    align-items:center; padding:72px 0 56px; position:relative; z-index:2;
+  }
+  @media (max-width:960px){.hero-main{grid-template-columns:1fr; gap:64px; padding:48px 0 40px}}
 
-  /* ---- section frame ---- */
-  section{padding:96px 0; position:relative}
-  .sec-head{max-width:780px; margin:0 auto 48px; text-align:center}
-  .sec-head h2{font-size:clamp(2rem,4.4vw,3rem); font-weight:800}
-  .sec-head .lead{font-size:1.14rem; color:var(--ink-2); margin-top:16px}
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:12px;
+    font-family:var(--sans); font-weight:700; font-size:.78rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--teal-d); margin-bottom:30px;
+  }
+  .hero-eyebrow::before{
+    content:""; width:42px; height:1px; background:var(--teal-d); display:inline-block;
+  }
+  .hero h1{
+    font-family:var(--sans); font-weight:900;
+    font-size:clamp(2.4rem, 6.2vw, 4.8rem); line-height:1.02; letter-spacing:-0.028em;
+    color:var(--ink);
+  }
+  .hero h1 .accent{
+    font-family:var(--serif); font-weight:900; color:var(--coral); letter-spacing:-0.01em;
+  }
+  .hero h1 .marked{position:relative; display:inline-block; padding-bottom:6px}
+  .hero h1 .marked::after{
+    content:""; position:absolute; inset-inline-start:-2%; inset-inline-end:-2%; bottom:-2px; height:14px;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 9 C 40 2, 80 14, 120 6 S 198 4, 198 10' stroke='%23F25C3B' stroke-width='3.2' fill='none' stroke-linecap='round'/></svg>") no-repeat center;
+    background-size:100% 100%; pointer-events:none;
+  }
+  .hero .lead{
+    font-size:1.18rem; color:var(--ink-2); line-height:1.85; max-width:48ch;
+    margin-top:32px; margin-bottom:38px;
+  }
+  .hero .lead::first-letter{
+    font-family:var(--serif); font-weight:900; font-size:3.6rem; float:right;
+    line-height:.95; margin-inline-end:10px; margin-top:6px; color:var(--ink);
+  }
+  .hero-cta{display:flex; align-items:center; gap:28px; flex-wrap:wrap}
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--coral); color:#fff;
+    font-family:var(--sans); font-weight:700; font-size:1rem;
+    padding:16px 32px; border-radius:11px;
+    box-shadow:0 12px 30px rgba(242,92,59,.32);
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary::after{content:"←"; font-weight:900; font-size:1.05rem}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 18px 38px rgba(242,92,59,.42); background:var(--coral-d)}
+  .btn-quiet{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:var(--sans); font-weight:700; font-size:.95rem; color:var(--ink-2);
+    border-bottom:1.5px solid var(--ink-2); padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .btn-quiet:hover{color:var(--coral); border-color:var(--coral)}
 
-  /* ---- HERO ---- */
-  .hero{position:relative; color:#fff; overflow:hidden; padding:0;
-    background:var(--ink)}
-  .hero::before{content:""; position:absolute; inset:0;
+  /* hero figure */
+  .hero-figure{position:relative}
+  .hero-photo{
+    aspect-ratio:4/5;
     background:
-      radial-gradient(680px 480px at 82% 8%, rgba(19,168,154,.55), transparent 60%),
-      radial-gradient(620px 520px at 6% 96%, rgba(242,92,59,.42), transparent 58%),
-      radial-gradient(900px 700px at 50% -20%, rgba(217,154,43,.20), transparent 60%);
-    pointer-events:none}
-  .hero::after{content:""; position:absolute; inset:0; opacity:.5;
-    background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.10) 1px, transparent 0);
-    background-size:30px 30px; pointer-events:none}
-  .logobar{position:relative; padding-top:30px}
-  .logobar .row{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:18px;
-    padding-bottom:18px; border-bottom:1px solid rgba(255,255,255,.12)}
-  .logobar .slot.right{justify-self:start}
-  .logobar .slot.center{justify-self:center}
-  .logobar .slot.left{justify-self:end}
-  .logobar .lg{height:60px; min-width:128px; display:flex; align-items:center; justify-content:center;
-    background:rgba(255,255,255,.92); border-radius:12px; padding:8px 18px; color:var(--ink);
-    font-family:"Rubik"; font-weight:800; font-size:.85rem; text-align:center; line-height:1.1;
-    border:1px dashed rgba(11,34,48,.22)}
-  .logobar .lg img{max-height:44px; max-width:170px; display:block}
-  @media(max-width:620px){.logobar .lg{height:46px; min-width:80px; font-size:.7rem; padding:6px 10px}}
-  .hero .wrap{position:relative; display:grid; grid-template-columns:1.15fr .85fr; gap:48px;
-    align-items:center; padding-top:60px; padding-bottom:96px}
-  .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.09);
-    border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:8px 16px;
-    font-weight:600; font-size:.9rem; margin-bottom:26px}
-  .badge b{color:#7fe7dc}
-  .hero h1{font-size:clamp(2.5rem,5.6vw,4rem); font-weight:900; max-width:15ch}
-  .hero h1 em{font-style:normal; color:#ff8b6e}
-  .hero .sub{font-size:1.22rem; color:#cfe0e4; max-width:50ch; margin:22px 0 32px}
-  .hero .btn-primary{background:var(--coral); color:#fff; font-family:"Rubik"; font-weight:700; font-size:1.05rem;
-    padding:16px 34px; border-radius:13px; display:inline-block; box-shadow:0 14px 36px rgba(242,92,59,.45);
-    transition:transform .15s ease, box-shadow .15s ease}
-  .hero .btn-primary:hover{transform:translateY(-3px); box-shadow:0 20px 46px rgba(242,92,59,.55)}
+      linear-gradient(165deg, rgba(11,34,48,.55), rgba(11,34,48,.08)),
+      var(--ink);
+    border-radius:4px;
+    position:relative; overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(11,34,48,.32);
+  }
+  .hero-photo::after{
+    content:"[ תמונת בוגרים  ·  קמפוס ]";
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    color:rgba(255,255,255,.4); font-family:var(--sans); font-weight:600;
+    font-size:.88rem; letter-spacing:.05em;
+  }
+  .hero-figure .tag{
+    position:absolute; top:-14px; inset-inline-start:-14px;
+    background:var(--ink); color:#fff;
+    font-family:var(--sans); font-weight:700; font-size:.72rem;
+    letter-spacing:.18em; text-transform:uppercase;
+    padding:9px 16px; border-radius:50px;
+  }
+  .hero-figure .caption{
+    position:absolute; inset-inline-end:-18px; bottom:-30px;
+    background:var(--paper); border:1px solid var(--line);
+    padding:20px 24px 18px; max-width:280px;
+    box-shadow:0 14px 32px rgba(11,34,48,.1);
+  }
+  .hero-figure .caption .n{
+    font-family:var(--serif); font-weight:900; font-size:2.8rem; line-height:1; color:var(--coral);
+    display:block; margin-bottom:8px;
+  }
+  .hero-figure .caption .t{font-size:.9rem; color:var(--ink-2); font-weight:600; line-height:1.55}
 
-  /* hero visual */
-  .hero-art{position:relative; min-height:380px}
-  .hero-art .photo{position:absolute; inset:0; border-radius:24px; overflow:hidden;
-    background:linear-gradient(160deg,#16455b,#0d2c3c); border:1px solid rgba(255,255,255,.12)}
-  .hero-art .photo .label{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    color:rgba(255,255,255,.4); font-weight:700; font-size:.9rem; letter-spacing:.05em}
-  .glasscard{position:absolute; background:rgba(255,255,255,.92); color:var(--ink); border-radius:16px;
-    padding:14px 18px; box-shadow:0 18px 40px rgba(0,0,0,.28); backdrop-filter:blur(6px)}
-  .glasscard b{font-family:"Rubik"; font-weight:800; font-size:1.55rem; display:block; color:var(--teal-d)}
-  .glasscard span{font-size:.82rem; color:var(--muted); font-weight:600}
-  .gc1{bottom:-18px; inset-inline-start:-22px; animation:float 5s ease-in-out infinite}
-  .gc2{top:-18px; inset-inline-end:-18px; animation:float 6s ease-in-out infinite .6s}
-  .gc2 b{color:var(--coral)}
-  @keyframes float{50%{transform:translateY(-12px)}}
-  @media(max-width:880px){
-    .hero .wrap{grid-template-columns:1fr; gap:60px}
-    .hero-art{min-height:280px}
+  /* logo strip */
+  .hero-strip{
+    display:flex; align-items:center; gap:36px; padding-top:54px; flex-wrap:wrap;
+    border-top:1px solid var(--line); position:relative; z-index:2;
+  }
+  .hero-strip .label{
+    font-family:var(--sans); font-weight:600;
+    font-size:.74rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--muted); white-space:nowrap;
+  }
+  .hero-strip .logos{display:flex; align-items:center; gap:22px; flex-wrap:wrap}
+  .hero-strip .lg{
+    font-family:var(--sans); font-weight:800; font-size:.95rem; color:var(--ink-2);
+    opacity:.72; transition:opacity .2s ease;
+  }
+  .hero-strip .lg:hover{opacity:1}
+  .hero-strip .dot{width:4px;height:4px;border-radius:50%; background:var(--line)}
+
+  /* ============ section heads ============ */
+  .sec-head{margin-bottom:60px; max-width:780px}
+  .sec-head .mono-label{margin-bottom:22px}
+  .sec-head h2{
+    font-family:var(--sans); font-weight:900;
+    font-size:clamp(1.95rem, 4.4vw, 3.1rem);
+    line-height:1.06; letter-spacing:-0.025em; color:var(--ink);
+  }
+  .sec-head h2 .accent{font-family:var(--serif); font-weight:900; color:var(--coral); letter-spacing:-0.01em}
+  .sec-head .lead{font-size:1.1rem; color:var(--ink-2); margin-top:20px; line-height:1.8; max-width:60ch}
+
+  /* ============ MISSION ============ */
+  .mission .num-list{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:56px;
+    padding-top:32px; border-top:1px solid var(--line);
+  }
+  @media (max-width:860px){.mission .num-list{grid-template-columns:1fr; gap:48px; padding-top:24px}}
+  .num-item{position:relative; padding-top:36px}
+  .num-item .num{
+    font-family:var(--serif); font-weight:900; font-size:4.8rem; line-height:.82; color:var(--coral);
+    display:block; margin-bottom:22px; letter-spacing:-0.025em;
+  }
+  .num-item h3{font-family:var(--sans); font-weight:800; font-size:1.35rem; margin-bottom:14px; line-height:1.2}
+  .num-item p{font-size:1.02rem; color:var(--muted); line-height:1.78; margin:0}
+
+  /* ============ CORE / WHY (two-col editorial) ============ */
+  .two-col{
+    display:grid; grid-template-columns:1fr 1px 1fr; gap:64px;
+    padding-top:32px; border-top:1px solid var(--line);
+  }
+  @media (max-width:880px){.two-col{grid-template-columns:1fr; gap:56px} .two-col .divider{display:none}}
+  .two-col .divider{background:var(--line); justify-self:center; width:1px; align-self:stretch}
+
+  .col-org .org-name{
+    display:flex; align-items:flex-start; gap:14px; padding-bottom:20px; margin-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
+  .col-org .org-name .d{width:12px;height:12px;border-radius:50%; flex-shrink:0; margin-top:14px}
+  .col-org.tc .org-name .d{background:var(--teal)}
+  .col-org.ub .org-name .d{background:var(--gold)}
+  .col-org .org-name h3{
+    font-family:var(--sans); font-weight:900; font-size:1.7rem; letter-spacing:-0.018em;
+  }
+  .col-org .org-name .role{
+    font-family:var(--sans); font-size:.74rem; font-weight:700; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--muted); margin-inline-start:auto; text-align:start; padding-top:14px;
+    line-height:1.5;
   }
 
-  /* ---- cards / grids ---- */
-  .grid{display:grid; gap:22px}
-  .g-2{grid-template-columns:repeat(2,1fr)}
-  .g-3{grid-template-columns:repeat(3,1fr)}
-  .g-4{grid-template-columns:repeat(4,1fr)}
-  @media(max-width:900px){.g-3,.g-4{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:620px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
-  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-    padding:30px; box-shadow:0 2px 14px rgba(11,34,48,.04); transition:transform .2s ease, box-shadow .2s ease}
-  .card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(11,34,48,.1)}
-  .card .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    font-size:1.5rem;margin-bottom:16px;background:var(--teal-soft)}
-  .card h3{font-size:1.28rem; font-weight:700; margin-bottom:10px}
-  .card p{font-size:1rem; color:var(--muted); margin:0}
+  .col-org .feat-list{list-style:none; padding:0; margin:0}
+  .col-org .feat-list li{
+    display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--line-2);
+  }
+  .col-org .feat-list li:last-child{border-bottom:none}
+  .col-org .feat-list .lbl{
+    font-family:var(--serif); font-weight:900; font-size:1.4rem; flex-shrink:0; min-width:32px;
+    line-height:1.3; opacity:.85;
+  }
+  .col-org.tc .feat-list .lbl{color:var(--teal-d)}
+  .col-org.ub .feat-list .lbl{color:#9a6f12}
+  .col-org .feat-list h4{
+    font-family:var(--sans); font-weight:700; font-size:1.08rem; margin-bottom:6px;
+  }
+  .col-org .feat-list p{font-size:.98rem; color:var(--muted); margin:0; line-height:1.72}
 
-  /* org accenting */
-  .tag-org{display:inline-flex;align-items:center;gap:8px;font-family:"Rubik";font-weight:700;font-size:.82rem;
-    letter-spacing:.04em;border-radius:999px;padding:6px 14px;margin-bottom:18px}
-  .tag-org.tc{background:var(--teal-soft); color:var(--teal-d)}
-  .tag-org.ub{background:var(--gold-soft); color:#9a6f12}
-  .tag-org .d{width:9px;height:9px;border-radius:50%}
-  .tag-org.tc .d{background:var(--teal)} .tag-org.ub .d{background:var(--gold)}
+  .core{background:#fff; border-block:1px solid var(--line)}
+  .why{background:#fff; border-block:1px solid var(--line)}
 
-  .org-card{border-radius:var(--radius); padding:34px; background:var(--card); border:1px solid var(--line);
-    box-shadow:0 2px 14px rgba(11,34,48,.04)}
-  .org-card.tc{border-top:5px solid var(--teal)}
-  .org-card.ub{border-top:5px solid var(--gold)}
-  .org-card h3{font-size:1.5rem; font-weight:800; margin-bottom:6px}
-  .org-card .role{font-weight:700; font-size:.95rem; margin-bottom:18px}
-  .org-card.tc .role{color:var(--teal-d)} .org-card.ub .role{color:#9a6f12}
-  .feat{display:flex; gap:14px; align-items:flex-start; margin-bottom:18px}
-  .feat:last-child{margin-bottom:0}
-  .feat .fic{min-width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-  .tc .feat .fic{background:var(--teal-soft)} .ub .feat .fic{background:var(--gold-soft)}
-  .feat h4{font-family:"Rubik";font-weight:700;font-size:1.08rem;margin-bottom:3px}
-  .feat p{font-size:.96rem;color:var(--muted);margin:0}
+  /* ============ ADVANTAGES (numbered editorial rows) ============ */
+  .adv-list{padding-top:24px; border-top:1px solid var(--line)}
+  .adv-row{
+    display:grid; grid-template-columns:140px 1fr 200px; gap:48px;
+    align-items:start; padding:44px 0; border-bottom:1px solid var(--line);
+  }
+  .adv-row:last-child{border-bottom:none}
+  @media (max-width:780px){
+    .adv-row{grid-template-columns:1fr; gap:18px; padding:36px 0}
+    .adv-row .num{font-size:3.2rem !important}
+    .adv-row .meta{order:-1}
+  }
+  .adv-row .num{
+    font-family:var(--serif); font-weight:900; font-size:4.6rem; line-height:.82;
+    color:var(--ink); letter-spacing:-0.035em;
+  }
+  .adv-row .num em{font-style:normal; color:var(--coral)}
+  .adv-row .body h3{
+    font-family:var(--sans); font-weight:800; font-size:1.55rem;
+    margin-bottom:12px; line-height:1.2;
+  }
+  .adv-row .body p{font-size:1.04rem; color:var(--ink-2); margin:0; max-width:60ch; line-height:1.78}
+  .adv-row .meta{
+    font-family:var(--sans); font-weight:700; font-size:.74rem;
+    letter-spacing:.2em; text-transform:uppercase; padding-top:14px; text-align:start;
+  }
+  .adv-row .meta.tc{color:var(--teal-d)}
+  .adv-row .meta.ub{color:#9a6f12}
+  .adv-row .meta::before{
+    content:""; display:block; width:36px; height:2px; background:currentColor; margin-bottom:14px;
+  }
 
-  /* advantages 2x2 */
-  .adv{border-radius:var(--radius); padding:30px; background:var(--card); border:1px solid var(--line);
-    box-shadow:0 2px 14px rgba(11,34,48,.04); transition:transform .2s ease, box-shadow .2s ease; position:relative; overflow:hidden}
-  .adv:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(11,34,48,.1)}
-  .adv::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px}
-  .adv.tc::before{background:var(--teal)} .adv.ub::before{background:var(--gold)}
-  .adv .mini{font-family:"Rubik";font-weight:700;font-size:.72rem;letter-spacing:.08em;margin-bottom:12px}
-  .adv.tc .mini{color:var(--teal-d)} .adv.ub .mini{color:#9a6f12}
-  .adv h3{font-size:1.25rem;font-weight:700;margin-bottom:8px}
-  .adv p{font-size:.98rem;color:var(--muted);margin:0}
+  /* ============ PARTNERSHIP (manifesto color block) ============ */
+  .partner{
+    background:var(--ink); color:#fff;
+    position:relative; overflow:hidden; padding:140px 0;
+  }
+  .partner::before{
+    content:""; position:absolute; inset:0; opacity:.45; pointer-events:none;
+    background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 0);
+    background-size:24px 24px;
+  }
+  .partner .wrap{position:relative; z-index:1}
+  .partner .mono-label{color:#7fe7dc; margin-bottom:32px}
+  .partner .mono-label::before{background:#7fe7dc; opacity:.7}
+  .partner .manifesto{
+    max-width:980px;
+    font-family:var(--sans); font-weight:900;
+    font-size:clamp(2.1rem, 4.8vw, 3.7rem); line-height:1.12; letter-spacing:-0.028em;
+    margin-bottom:72px;
+  }
+  .partner .manifesto .accent{font-family:var(--serif); font-weight:900; color:#ff8b6e; letter-spacing:-0.012em}
+  .partner .manifesto .muted{color:rgba(255,255,255,.4); font-family:var(--sans); font-weight:900}
+  .partner-two{
+    display:grid; grid-template-columns:1fr 1px 1fr; gap:64px;
+    padding-top:48px; border-top:1px solid rgba(255,255,255,.18);
+  }
+  @media (max-width:880px){.partner-two{grid-template-columns:1fr; gap:48px} .partner-two .divider{display:none}}
+  .partner-two .divider{background:rgba(255,255,255,.18); justify-self:center; width:1px}
+  .partner-col .ptag{
+    font-family:var(--sans); font-weight:700; font-size:.78rem;
+    letter-spacing:.18em; text-transform:uppercase;
+    margin-bottom:20px; display:flex; align-items:center; gap:10px;
+  }
+  .partner-col.tc .ptag{color:#7fe7dc}
+  .partner-col.tc .ptag .d{background:var(--teal)}
+  .partner-col.ub .ptag{color:#f0c674}
+  .partner-col.ub .ptag .d{background:var(--gold)}
+  .partner-col .ptag .d{width:9px;height:9px;border-radius:50%}
+  .partner-col h3{
+    font-family:var(--sans); font-weight:900; font-size:1.7rem;
+    margin-bottom:20px; letter-spacing:-0.015em;
+  }
+  .partner-col p{color:rgba(255,255,255,.72); font-size:1.04rem; line-height:1.8; margin:0}
 
-  /* partnership band */
-  .partner{background:linear-gradient(180deg,#0B2230,#123347); color:#fff}
-  .partner .sec-head h2{color:#fff} .partner .sec-head .lead{color:#bcccd2}
-  .partner .org-card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); color:#fff}
-  .partner .org-card .feat p{color:#a9bcc4}
-  .partner .org-card.tc .role{color:#7fe7dc} .partner .org-card.ub .role{color:#f0c674}
-  .vs{display:flex;align-items:center;justify-content:center; align-self:center}
-  .vs .ring{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;
-    font-family:"Rubik";font-weight:800;color:#fff}
-  @media(max-width:780px){.vs{display:none}}
+  /* ============ STORIES (magazine pull-quotes) ============ */
+  .stories .lead-quote{
+    border-top:2px solid var(--ink); border-bottom:1px solid var(--line);
+    padding:52px 0 60px; margin-bottom:56px;
+    position:relative;
+  }
+  .lead-quote .mark{
+    font-family:var(--serif); font-weight:900; font-size:8.5rem; line-height:.55;
+    color:var(--coral); position:absolute; top:28px; inset-inline-start:0;
+  }
+  .lead-quote blockquote{
+    margin:0 0 30px; padding-inline-start:120px;
+    font-family:var(--serif); font-weight:700;
+    font-size:clamp(1.6rem, 3vw, 2.4rem); line-height:1.32;
+    color:var(--ink); letter-spacing:-0.012em;
+  }
+  @media (max-width:780px){.lead-quote blockquote{padding-inline-start:0; padding-top:64px}}
+  .lead-quote .who{
+    display:flex; align-items:center; gap:14px;
+    padding-inline-start:120px; flex-wrap:wrap;
+  }
+  @media (max-width:780px){.lead-quote .who{padding-inline-start:0}}
+  .lead-quote .who .av{
+    width:50px;height:50px;border-radius:50%;
+    background:var(--paper-2); border:1px solid var(--line);
+  }
+  .lead-quote .who b{font-family:var(--sans); font-weight:800; font-size:1.02rem; display:block}
+  .lead-quote .who span{font-size:.88rem; color:var(--muted)}
 
-  /* testimonials */
-  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative;
-    box-shadow:0 2px 14px rgba(11,34,48,.04)}
-  .quote .mark{font-family:"Rubik";font-weight:900;font-size:3.4rem;color:var(--teal-soft);line-height:.5}
-  .quote .who{display:flex;align-items:center;gap:13px;margin-top:18px}
-  .quote .who .av{width:46px;height:46px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--line)}
-  .quote .who b{display:block;font-family:"Rubik"} .quote .who span{font-size:.85rem;color:var(--muted)}
+  .quotes-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px}
+  @media (max-width:780px){.quotes-grid{grid-template-columns:1fr; gap:46px}}
+  .q-item{position:relative}
+  .q-item .mark{
+    font-family:var(--serif); font-weight:900; font-size:3.6rem;
+    color:var(--gold); line-height:.5; display:block; margin-bottom:14px;
+  }
+  .q-item blockquote{
+    font-family:var(--serif); font-weight:500; font-size:1.22rem;
+    line-height:1.6; color:var(--ink); margin:0 0 24px; padding:0;
+  }
+  .q-item .who{display:flex; align-items:center; gap:13px}
+  .q-item .who .av{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--paper-2); border:1px solid var(--line);
+  }
+  .q-item .who b{font-family:var(--sans); font-weight:800; font-size:.98rem; display:block}
+  .q-item .who span{font-size:.86rem; color:var(--muted)}
 
-  /* impact */
-  .impact{background:var(--teal); color:#fff; position:relative; overflow:hidden}
-  .impact::before{content:"";position:absolute;inset:0;opacity:.4;
-    background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0);background-size:28px 28px}
-  .impact .wrap{position:relative}
-  .impact .grid{text-align:center}
-  .impact .n{font-family:"Rubik";font-weight:900;font-size:clamp(2.6rem,5vw,3.6rem)}
-  .impact .l{color:#d6f1ee;font-weight:600}
+  /* ============ FINAL CTA ============ */
+  .final{
+    padding:140px 0; text-align:center;
+    background:var(--paper-2); border-block:1px solid var(--line);
+    position:relative; overflow:hidden;
+  }
+  .final::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+    background-image:radial-gradient(circle at 1px 1px, rgba(11,34,48,.06) 1px, transparent 0);
+    background-size:24px 24px;
+  }
+  .final .wrap{position:relative; z-index:1}
+  .final .kicker{
+    font-family:var(--sans); font-weight:700; font-size:.82rem;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:var(--coral); margin-bottom:26px;
+  }
+  .final h2{
+    font-family:var(--sans); font-weight:900;
+    font-size:clamp(2.4rem, 5.6vw, 4.6rem);
+    line-height:1.04; letter-spacing:-0.028em;
+    margin-bottom:26px; max-width:16ch; margin-inline:auto;
+  }
+  .final h2 .accent{font-family:var(--serif); font-weight:900; color:var(--coral); letter-spacing:-0.012em}
+  .final p{font-size:1.16rem; color:var(--ink-2); max-width:46ch; margin:0 auto 42px; line-height:1.8}
+  .final .btn-primary{font-size:1.06rem; padding:18px 38px}
+  .final .micro{margin-top:28px; font-size:.88rem; color:var(--muted)}
 
-  /* final CTA */
-  .final{text-align:center}
-  .final .card{max-width:680px;margin:0 auto;padding:48px 40px}
-  .final .ic{margin:0 auto 18px;background:var(--coral);color:#fff}
-  .final .btn-primary{background:var(--coral);color:#fff;font-family:"Rubik";font-weight:700;font-size:1.05rem;
-    padding:16px 38px;border-radius:13px;display:inline-block;margin-top:10px;
-    box-shadow:0 14px 34px rgba(242,92,59,.4);transition:transform .15s ease}
-  .final .btn-primary:hover{transform:translateY(-3px)}
-
-  /* footer */
-  footer{background:var(--ink);color:#9fb4bc;padding:60px 0 42px;font-size:.94rem}
-  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
-  @media(max-width:780px){footer .cols{grid-template-columns:1fr 1fr}}
-  footer b{color:#fff;font-family:"Rubik";display:block;margin-bottom:12px}
-  footer a{display:block;color:#9fb4bc;margin-bottom:7px} footer a:hover{color:#fff}
-  .foot-brand{font-family:"Rubik";font-weight:800;color:#fff;font-size:1.25rem;margin-bottom:12px}
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink); color:#9fb4bc; padding:80px 0 38px; font-size:.94rem}
+  footer .cols{
+    display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px;
+    padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  @media (max-width:780px){footer .cols{grid-template-columns:1fr 1fr; gap:36px}}
+  footer b{
+    color:#fff; font-family:var(--sans); display:block; margin-bottom:14px;
+    font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+  }
+  footer a{display:block; color:#9fb4bc; margin-bottom:8px; transition:color .15s ease}
+  footer a:hover{color:#fff}
+  .foot-brand{
+    font-family:var(--sans); font-weight:900; color:#fff;
+    font-size:1.4rem; margin-bottom:14px; letter-spacing:-0.015em;
+  }
+  .foot-brand span{color:rgba(255,255,255,.35); font-weight:500; padding:0 6px; font-family:var(--serif)}
+  .foot-bottom{
+    padding-top:30px; display:flex; justify-content:space-between; align-items:center;
+    font-size:.82rem; color:#6b818a; flex-wrap:wrap; gap:12px;
+  }
 </style>
 </head>
 <body>
 
-
-<!-- ============ HERO ============ -->
+<!-- ===== HERO ===== -->
 <header class="hero">
-  <div class="wrap logobar reveal">
-    <div class="row">
-      <!-- ימין -->
-      <div class="slot right">
-        <div class="lg"><!-- החלף ב: <img src="olim-beyachad-logo.png" alt="עולים ביחד"> -->עולים ביחד</div>
-      </div>
-      <!-- מרכז -->
-      <div class="slot center">
-        <div class="lg"><!-- החלף ב: <img src="ministry-of-labor-logo.png" alt="משרד העבודה"> -->משרד העבודה</div>
-      </div>
-      <!-- שמאל -->
-      <div class="slot left">
-        <div class="lg"><!-- החלף ב: <img src="tech-career-logo.png" alt="טק קריירה"> -->טק קריירה</div>
-      </div>
-    </div>
-  </div>
   <div class="wrap">
-    <div class="reveal" style="animation-delay:.05s">
-      <div class="badge">שותפות לשינוי · <b>טק קריירה</b> × <b>עולים ביחד</b></div>
-      <h1>מהיום הראשון — <em>לקריירה אמיתית</em> בתעשייה.</h1>
-      <p class="sub">בוטקאמפ טכנולוגי אינטנסיבי עם מרצים מהשורה הראשונה בתעשייה, מעטפת אישית ותוכנית התמחות מובנית — שמעניקה לכם את הניסיון שפותח את הדלת למשרת הליבה הראשונה.</p>
-      <a class="btn-primary" href="#join">להגיש מועמדות</a>
+    <div class="hero-top reveal">
+      <div class="who">
+        <span class="d"></span>
+        טק קריירה
+        <span class="x">×</span>
+        עולים ביחד
+      </div>
+      <a class="apply" href="#join">להגיש מועמדות</a>
     </div>
-    <div class="hero-art reveal" style="animation-delay:.2s">
-      <div class="photo"><div class="label">[ תמונת קמפוס / בוגרים ]</div></div>
-      <div class="glasscard gc1"><b>__%</b><span>השמה בקרב בוגרים</span></div>
-      <div class="glasscard gc2"><b>4</b><span>מסלולי הכשרה</span></div>
+
+    <div class="hero-main">
+      <div class="reveal" style="animation-delay:.06s">
+        <div class="hero-eyebrow">שותפות לשינוי · מחזור 2026</div>
+        <h1>
+          מהיום הראשון —<br>
+          <span class="accent">לקריירה אמיתית</span><br>
+          <span class="marked">בתעשייה.</span>
+        </h1>
+        <p class="lead">בוטקאמפ טכנולוגי אינטנסיבי, עם מרצים מהשורה הראשונה בתעשייה, מעטפת אישית ותוכנית התמחות מובנית — שמעניקה לכם את הניסיון שפותח את הדלת למשרת הליבה הראשונה.</p>
+        <div class="hero-cta">
+          <a class="btn-primary" href="#join">הגישו מועמדות</a>
+          <a class="btn-quiet" href="#core">איך התוכנית עובדת</a>
+        </div>
+      </div>
+
+      <div class="hero-figure reveal" style="animation-delay:.18s">
+        <div class="hero-photo"></div>
+        <div class="tag">מחזור 2026</div>
+        <div class="caption">
+          <span class="n">__%</span>
+          <span class="t">השמה בקרב בוגרים שסיימו את הבוטקאמפ ועברו את שלב ההתמחות.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-strip reveal" style="animation-delay:.28s">
+      <span class="label">בשיתוף</span>
+      <div class="logos">
+        <span class="lg">עולים ביחד</span>
+        <span class="dot"></span>
+        <span class="lg">משרד העבודה</span>
+        <span class="dot"></span>
+        <span class="lg">טק קריירה</span>
+      </div>
     </div>
   </div>
-  <div class="wrap"><div class="note"><b>תפקיד הסקשן:</b> לענות תוך 5 שניות על "מה / למי / למה דווקא אתם". להחליף את הנתונים וה-placeholder של התמונה בנכסים אמיתיים.</div></div>
 </header>
 
-<!-- ============ המשימה ============ -->
-<section id="mission">
+<!-- ===== MISSION ===== -->
+<section id="mission" class="mission">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>הפער הדיגיטלי הוא קודם כול פער של הזדמנויות.</h2>
+      <span class="mono-label">קודם כול — למה</span>
+      <h2>הפער הדיגיטלי הוא קודם כול<br><span class="accent">פער של הזדמנויות.</span></h2>
       <p class="lead">טק קריירה פועלת לצמצום הפער הדיגיטלי בישראל וליצירת מוביליות חברתית. ביחד עם עולים ביחד, אנחנו הופכים הכשרה למנוף לשינוי חברתי-כלכלי אמיתי.</p>
     </div>
-    <div class="grid g-3">
-      <div class="card reveal"><div class="ic">🎯</div><h3>צמצום הפער</h3><p>גישה להכשרה איכותית למי שהדלת לתעשייה הייתה סגורה בפניו.</p></div>
-      <div class="card reveal" style="animation-delay:.1s"><div class="ic">📈</div><h3>מוביליות חברתית</h3><p>לא "עוד קורס" — מסלול למשרת ליבה ולשינוי מציאות כלכלית.</p></div>
-      <div class="card reveal" style="animation-delay:.2s"><div class="ic">🤝</div><h3>גשר קהילתי</h3><p>מינוף קשרים, מנטורים ומתנדבים להשתלבות מתמשכת.</p></div>
+    <div class="num-list">
+      <div class="num-item reveal">
+        <span class="num">01</span>
+        <h3>צמצום הפער</h3>
+        <p>גישה להכשרה איכותית עבור מי שהדלת לתעשיית הטכנולוגיה הייתה סגורה בפניו עד היום.</p>
+      </div>
+      <div class="num-item reveal" style="animation-delay:.1s">
+        <span class="num">02</span>
+        <h3>מוביליות חברתית</h3>
+        <p>לא "עוד קורס" — מסלול שמוביל אל משרת ליבה אמיתית, וממנה אל שינוי כלכלי ארוך-טווח.</p>
+      </div>
+      <div class="num-item reveal" style="animation-delay:.2s">
+        <span class="num">03</span>
+        <h3>גשר קהילתי</h3>
+        <p>מינוף קשרים, מנטורים ומתנדבים — כדי שההשתלבות תהיה מתמשכת, לא חד-פעמית.</p>
+      </div>
     </div>
-    <div class="note"><b>תפקיד הסקשן:</b> ההצדקה הערכית לפני הפרטים — זה מה שמבדיל עמותה ממכללה מסחרית. שלוש הנקודות הן placeholder לחידוד.</div>
   </div>
 </section>
 
-<!-- ============ ליבת הפעילות ============ -->
-<section id="core" style="background:#fff;border-block:1px solid var(--line)">
+<!-- ===== CORE ===== -->
+<section id="core" class="core">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>שני מנועים, מטרה אחת.</h2>
-      <p class="lead">כל עמותה מביאה את ליבת המומחיות שלה — וביחד נוצרת שרשרת שלמה מהכשרה ועד השתלבות.</p>
+      <span class="mono-label">איך זה עובד</span>
+      <h2>שני מנועים,<br><span class="accent">מטרה אחת.</span></h2>
+      <p class="lead">כל עמותה מביאה את ליבת המומחיות שלה — וביחד נוצרת שרשרת שלמה מהכשרה ועד השתלבות בשוק העבודה.</p>
     </div>
-    <div class="grid g-2">
-      <div class="org-card ub reveal">
-        <span class="tag-org ub"><span class="d"></span> עולים ביחד</span>
-        <h3>עולים ביחד</h3>
-        <div class="role">פריצת התקרה האקדמית ליוצאי אתיופיה</div>
-        <div class="feat"><span class="fic">🎓</span><div><h4>הכוונה וליווי למצטיינים</h4><p>ליווי מותאם למצטיינים בתחומי הרפואה, המדעים והתארים המתקדמים.</p></div></div>
-        <div class="feat"><span class="fic">👔</span><div><h4>פיתוח הנהגה בכירה</h4><p>הכשרת מנהלים מנוסים לתפקידי דירקטוריון, בעבודה עם מנטורים מהתחום.</p></div></div>
-        <div class="feat"><span class="fic">🌟</span><div><h4>מודל הבוגר</h4><p>התבססות על בוגרים בכירים עם סיפורי הצלחה בקהילה.</p></div></div>
+
+    <div class="two-col">
+      <div class="col-org tc reveal">
+        <div class="org-name">
+          <span class="d"></span>
+          <h3>טק קריירה</h3>
+          <span class="role">מנוע ההכשרה<br>וההשמה</span>
+        </div>
+        <ul class="feat-list">
+          <li>
+            <span class="lbl">א</span>
+            <div>
+              <h4>הכשרות בסגנון Bootcamp</h4>
+              <p>קורסי פיתוח אינטנסיביים — Full Stack, Data, Cyber ו-QA.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lbl">ב</span>
+            <div>
+              <h4>קמפוס ומעטפת רחבה</h4>
+              <p>סביבת לימוד שמדמה סביבת עבודה אמיתית. מהיום הראשון.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lbl">ג</span>
+            <div>
+              <h4>חיבור לתעשייה והשמה</h4>
+              <p>מרצים מהשורה הראשונה ותוכניות התמחות שמובילות למשרה.</p>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="org-card tc reveal" style="animation-delay:.12s">
-        <span class="tag-org tc"><span class="d"></span> טק קריירה</span>
-        <h3>טק קריירה</h3>
-        <div class="role">מנוע ההכשרה הטכנולוגית וההשמה</div>
-        <div class="feat"><span class="fic">💻</span><div><h4>הכשרות בסגנון Bootcamp</h4><p>קורסי פיתוח אינטנסיביים: Full Stack, Data, Cyber ו-QA.</p></div></div>
-        <div class="feat"><span class="fic">🏛️</span><div><h4>קמפוס ומעטפת רחבה</h4><p>סביבת לימוד אינטנסיבית המדמה סביבת עבודה, בצד המעשי והטכני.</p></div></div>
-        <div class="feat"><span class="fic">🚀</span><div><h4>חיבור לתעשייה והשמה</h4><p>מרצים מהשורה הראשונה ותוכניות התמחות שמובילות למשרה.</p></div></div>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="col-org ub reveal" style="animation-delay:.1s">
+        <div class="org-name">
+          <span class="d"></span>
+          <h3>עולים ביחד</h3>
+          <span class="role">פריצת התקרה<br>האקדמית</span>
+        </div>
+        <ul class="feat-list">
+          <li>
+            <span class="lbl">א</span>
+            <div>
+              <h4>הכוונה וליווי למצטיינים</h4>
+              <p>ליווי מותאם אישית בתחומי הרפואה, המדעים והתארים המתקדמים.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lbl">ב</span>
+            <div>
+              <h4>פיתוח הנהגה בכירה</h4>
+              <p>הכשרת מנהלים מנוסים לתפקידי דירקטוריון, בעבודה עם מנטורים מהתעשייה.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lbl">ג</span>
+            <div>
+              <h4>קהילת בוגרים</h4>
+              <p>בוגרים בכירים שכבר השתלבו — הופכים למודל ולמנטורים לדור הבא.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="note"><b>תפקיד הסקשן:</b> תמונת-על של מה כל עמותה עושה — לפני שצוללים ליתרונות הספציפיים בסקשנים הבאים.</div>
   </div>
 </section>
 
-<!-- ============ למה דווקא כאן (יתרונות 2+2) ============ -->
+<!-- ===== ADVANTAGES ===== -->
 <section id="advantages">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>למה דווקא כאן?</h2>
-      <p class="lead">ארבעה יתרונות שאי-אפשר למצוא במקום אחר — שניים מכל עמותה.</p>
+      <span class="mono-label">למה דווקא כאן</span>
+      <h2>ארבעה יתרונות<br>שלא תמצאו <span class="accent">במקום אחר.</span></h2>
     </div>
-    <div class="grid g-2">
-      <div class="adv tc reveal"><div class="mini">טק קריירה</div><h3>חיבור ישיר לתעשייה</h3><p>מרצים מהשורה הראשונה בהייטק — כדוגמת Cognizant, Bynet ו-NESS. ידע מעשי מהיום הראשון.</p></div>
-      <div class="adv tc reveal" style="animation-delay:.08s"><div class="mini">טק קריירה</div><h3>תוכנית התמחות מובנית</h3><p>שילוב הבוגרים בהתמחות מעשית — היתרון שמייצר את הניסיון שחסר לג'וניור וצולח את מחסום ההשמה הראשון.</p></div>
-      <div class="adv ub reveal" style="animation-delay:.16s"><div class="mini">עולים ביחד</div><h3>ליווי אישי מתקדם</h3><p>בניית "חליפת ליווי אישית" למצטיינים בתחומי הרפואה, המדעים והתארים המתקדמים.</p></div>
-      <div class="adv ub reveal" style="animation-delay:.24s"><div class="mini">עולים ביחד</div><h3>פיתוח הנהגה בכירה</h3><p>הכשרת מנהלים מנוסים לתפקידי C-Level ודירקטוריונים, תוך עבודה עם מנטורים מהשורה הראשונה במשק.</p></div>
+    <div class="adv-list">
+      <div class="adv-row reveal">
+        <span class="num"><em>01</em></span>
+        <div class="body">
+          <h3>חיבור ישיר לתעשייה</h3>
+          <p>מרצים מהשורה הראשונה בתעשייה — כדוגמת Cognizant, Bynet ו-NESS. ידע מעשי ועדכני מהיום הראשון של הקורס, לא תיאוריה ישנה.</p>
+        </div>
+        <div class="meta tc">טק קריירה</div>
+      </div>
+      <div class="adv-row reveal" style="animation-delay:.08s">
+        <span class="num"><em>02</em></span>
+        <div class="body">
+          <h3>תוכנית התמחות מובנית</h3>
+          <p>שילוב הבוגרים בהתמחות מעשית — היתרון שמייצר את הניסיון שחסר לג'וניור, וצולח את מחסום ההשמה הראשון.</p>
+        </div>
+        <div class="meta tc">טק קריירה</div>
+      </div>
+      <div class="adv-row reveal" style="animation-delay:.16s">
+        <span class="num"><em>03</em></span>
+        <div class="body">
+          <h3>ליווי אישי מתקדם</h3>
+          <p>בניית "חליפת ליווי אישית" למצטיינים בתחומי הרפואה, המדעים והתארים המתקדמים — תוך התאמה למסלול הקריירה.</p>
+        </div>
+        <div class="meta ub">עולים ביחד</div>
+      </div>
+      <div class="adv-row reveal" style="animation-delay:.24s">
+        <span class="num"><em>04</em></span>
+        <div class="body">
+          <h3>פיתוח הנהגה בכירה</h3>
+          <p>הכשרת מנהלים מנוסים לתפקידי C-Level ודירקטוריונים, בעבודה ישירה עם מנטורים מהשורה הראשונה במשק הישראלי.</p>
+        </div>
+        <div class="meta ub">עולים ביחד</div>
+      </div>
     </div>
-    <div class="note"><b>תפקיד הסקשן:</b> ליבת הבידול. שמות החברות (Cognizant / Bynet / NESS) הם נכס אמון — כדאי גם כשורת לוגואים. לאמת הרשאות שימוש.</div>
   </div>
 </section>
 
-<!-- ============ למה אנחנו? (תוכניות הדגל) ============ -->
-<section id="why" style="background:#fff;border-block:1px solid var(--line)">
+<!-- ===== WHY US ===== -->
+<section id="why" class="why">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow gold">תוכניות הדגל</span>
-      <h2>למה אנחנו?</h2>
-      <p class="lead">התוכניות שמובילות את הבוגרים שלנו מהכיתה אל משרות הליבה והמנהיגות.</p>
+      <span class="mono-label">תוכניות הדגל</span>
+      <h2>מהכיתה אל<br><span class="accent">משרת הליבה.</span></h2>
+      <p class="lead">התוכניות שמובילות את הבוגרים שלנו מהיום הראשון — דרך התמחות מעשית — עד לתפקידי ליבה ולהנהגה.</p>
     </div>
-    <div class="grid g-2">
-      <div class="org-card ub reveal">
-        <span class="tag-org ub"><span class="d"></span> עולים ביחד</span>
-        <div class="feat"><span class="fic">🎓</span><div><h4>הכוונת סטודנטים</h4><p>תוכנית להגדלת הייצוג במוסדות מובילים, ותוכנית "טסה" להתמחות מעשית בשכר לסטודנטים מצטיינים.</p></div></div>
-        <div class="feat"><span class="fic">📊</span><div><h4>פיתוח ניהולי וקריירה</h4><p>תוכנית הדגל להשמה במשרות איכותיות, תוכניות "עתודה לניהול", הכשרת מנהלי משאבי אנוש (HR), ועתודה למנהיגות בחינוך ובשירות הציבורי ("משפיעים").</p></div></div>
+    <div class="two-col">
+      <div class="col-org tc reveal">
+        <div class="org-name">
+          <span class="d"></span>
+          <h3>טק קריירה</h3>
+          <span class="role">פריסה ארצית<br>מחיפה ועד אשקלון</span>
+        </div>
+        <ul class="feat-list">
+          <li>
+            <span class="lbl">א</span>
+            <div>
+              <h4>פריסה גיאוגרפית רחבה</h4>
+              <p>לראשונה — קורסי העילית של טק-קריירה מונגשים לפריפריה החברתית והגיאוגרפית בישראל באופן נרחב.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lbl">ב</span>
+            <div>
+              <h4>מודל היברידי לעובדים</h4>
+              <p>למידה גמישה מרחוק ומפגשים פרונטליים — חצי שנה ברצף, בלי לוותר על פרנסה קיימת.</p>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="org-card tc reveal" style="animation-delay:.12s">
-        <span class="tag-org tc"><span class="d"></span> טק קריירה</span>
-        <div class="feat"><span class="fic">📍</span><div><h4>פריסה גיאוגרפית רחבה (מחיפה ועד אשקלון)</h4><p>לראשונה, אנחנו יוצאים מגבולות הקמפוס הפיזי ומנגישים את קורסי העילית של טק-קריירה לפריפריה החברתית והגיאוגרפית בישראל באופן נרחב.</p></div></div>
-        <div class="feat"><span class="fic">🔀</span><div><h4>מודל היברידי מותאם לאנשים עובדים</h4><p>הקורסים יתקיימו במתכונת היברידית גמישה (למידה מרחוק ומפגשים פרונטליים) לאורך כחצי שנה — ומאפשרים לסטודנטים לשמור על רצף תעסוקתי ולהמשיך לעבוד לפרנסתם במקביל לרכישת מקצוע העתיד.</p></div></div>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="col-org ub reveal" style="animation-delay:.1s">
+        <div class="org-name">
+          <span class="d"></span>
+          <h3>עולים ביחד</h3>
+          <span class="role">ייצוג וקריירה<br>במוסדות מובילים</span>
+        </div>
+        <ul class="feat-list">
+          <li>
+            <span class="lbl">א</span>
+            <div>
+              <h4>הכוונת סטודנטים</h4>
+              <p>תוכנית להגדלת הייצוג במוסדות מובילים, ותוכנית "טסה" להתמחות מעשית בשכר לסטודנטים מצטיינים.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lbl">ב</span>
+            <div>
+              <h4>פיתוח ניהולי וקריירה</h4>
+              <p>"עתודה לניהול", הכשרת מנהלי משאבי אנוש, ועתודה למנהיגות בחינוך ובשירות הציבורי ("משפיעים").</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="note"><b>תפקיד הסקשן:</b> תוכניות הדגל הקונקרטיות. הסקשן הזה דומה במבנה ל"ליבת הפעילות" — אם זה מרגיש חזרתי, אפשר לאחד אותם או להפוך אחד לטאבים.</div>
   </div>
 </section>
 
-<!-- ============ השותפות ============ -->
+<!-- ===== PARTNERSHIP ===== -->
 <section id="partner" class="partner">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>שתי עמותות, חזון אחד.</h2>
-      <p class="lead">השותפות מחברת מנוע הכשרה והשמה טכנולוגי עם עומק קהילתי, ליווי אקדמי ומודל מנהיגות — לטובת השתלבות חברתית וכלכלית רחבה.</p>
+    <div class="reveal">
+      <span class="mono-label">השותפות</span>
+      <h2 class="manifesto" style="margin-top:24px">
+        <span class="muted">שתי עמותות.</span>
+        חזון אחד —<br>
+        <span class="accent">לשבור את התקרה</span><br>
+        עבור הדור הבא.
+      </h2>
     </div>
-    <div class="grid" style="grid-template-columns:1fr auto 1fr; align-items:stretch; gap:18px">
-      <div class="org-card tc reveal">
-        <span class="tag-org tc"><span class="d"></span> טק קריירה</span>
-        <h3>טק קריירה</h3>
-        <div class="role">מנוע ההכשרה וההשמה</div>
-        <p style="color:#a9bcc4;margin:0">מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה.</p>
+    <div class="partner-two reveal" style="animation-delay:.08s">
+      <div class="partner-col tc">
+        <div class="ptag"><span class="d"></span> טק קריירה</div>
+        <h3>מנוע ההכשרה וההשמה.</h3>
+        <p>מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה הראשונה.</p>
       </div>
-      <div class="vs reveal"><div class="ring">×</div></div>
-      <div class="org-card ub reveal" style="animation-delay:.1s">
-        <span class="tag-org ub"><span class="d"></span> עולים ביחד</span>
-        <h3>עולים ביחד</h3>
-        <div class="role">העומק הקהילתי והאקדמי</div>
-        <p style="color:#a9bcc4;margin:0">מביאה את הליווי האקדמי, פיתוח המנהיגות הבכירה ומודל הבוגר, וגישור בין המצוינות האישית להשתלבות חברתית-כלכלית רחבה.</p>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="partner-col ub">
+        <div class="ptag"><span class="d"></span> עולים ביחד</div>
+        <h3>העומק הקהילתי והאקדמי.</h3>
+        <p>מביאה את הליווי האקדמי, פיתוח המנהיגות הבכירה והקהילה של הבוגרים, וגישור בין המצוינות האישית להשתלבות חברתית-כלכלית רחבה.</p>
       </div>
     </div>
-    <div class="note" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#eaf6f4"><b>תפקיד הסקשן:</b> מסביר את הדו-כיווניות בלי לבלבל. שאלה לבירור: רוצים גם לוגו/קישור נפרד לאתר עולים ביחד?</div>
   </div>
 </section>
 
-<!-- ============ מודל הבוגר ============ -->
-<section id="stories">
+<!-- ===== STORIES ===== -->
+<section id="stories" class="stories">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>ההצלחה מדברת בעצמה.</h2>
-      <p class="lead">בוגרים בכירים שכבר השתלבו הופכים למודל, למנטורים ולגשר עבור הדור הבא.</p>
+      <span class="mono-label">בוגרים</span>
+      <h2>ההצלחה<br><span class="accent">מדברת בעצמה.</span></h2>
     </div>
-    <div class="grid g-3">
-      <div class="quote reveal"><div class="mark">”</div><p>[ציטוט בוגר/ת — מאיפה הגיע/ה ומה השתנה אחרי ההשמה]</p><div class="who"><span class="av"></span><div><b>שם הבוגר/ת</b><span>תפקיד · חברה · מחזור</span></div></div></div>
-      <div class="quote reveal" style="animation-delay:.1s"><div class="mark">”</div><p>[ציטוט שני — דגש על ההתמחות כנקודת מפנה]</p><div class="who"><span class="av"></span><div><b>שם הבוגר/ת</b><span>תפקיד · חברה · מחזור</span></div></div></div>
-      <div class="quote reveal" style="animation-delay:.2s"><div class="mark">”</div><p>[ציטוט שלישי — דגש על המעטפת האישית / הקהילה]</p><div class="who"><span class="av"></span><div><b>שם הבוגר/ת</b><span>תפקיד · חברה · מחזור</span></div></div></div>
+
+    <div class="lead-quote reveal">
+      <span class="mark">״</span>
+      <blockquote>[ ציטוט מרכזי של בוגר/ת בכיר/ה — סיפור המעבר מהיום הראשון של הבוטקאמפ אל משרת הליבה הראשונה, וההשפעה על המשפחה ועל הקהילה. ]</blockquote>
+      <div class="who">
+        <span class="av"></span>
+        <div class="meta">
+          <b>שם הבוגר/ת</b>
+          <span>תפקיד · חברה · מחזור 2024</span>
+        </div>
+      </div>
     </div>
-    <div class="note"><b>תפקיד הסקשן:</b> הוכחה חברתית. עדיף תמונות אמיתיות, שמות חברות, ולפחות ציטוט אחד שמדגיש את ה-ROI התעסוקתי.</div>
+
+    <div class="quotes-grid">
+      <div class="q-item reveal">
+        <span class="mark">״</span>
+        <blockquote>[ ציטוט שני — דגש על תוכנית ההתמחות כנקודת המפנה שאיפשרה את ההשמה הראשונה. ]</blockquote>
+        <div class="who">
+          <span class="av"></span>
+          <div>
+            <b>שם הבוגר/ת</b>
+            <span>תפקיד · חברה · מחזור</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-item reveal" style="animation-delay:.1s">
+        <span class="mark">״</span>
+        <blockquote>[ ציטוט שלישי — דגש על המעטפת האישית, הקהילה וההכוונה לאורך הדרך. ]</blockquote>
+        <div class="who">
+          <span class="av"></span>
+          <div>
+            <b>שם הבוגר/ת</b>
+            <span>תפקיד · חברה · מחזור</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-
-<!-- ============ הצטרפות (מועמדים בלבד) ============ -->
+<!-- ===== FINAL CTA ===== -->
 <section id="join" class="final">
-  <div class="wrap">
-    <div class="card reveal">
-      <div class="ic" style="width:56px;height:56px">🚀</div>
-      <span class="eyebrow coral">צעד הבא</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-top:10px">מוכנים להיכנס לתעשייה?</h2>
-      <p style="color:var(--muted);font-size:1.12rem;max-width:46ch;margin:14px auto 0">בדקו זכאות והגישו מועמדות. אנחנו כאן כדי ללוות אתכם מהיום הראשון ועד משרת הליבה הראשונה.</p>
-      <a class="btn-primary" href="#">להגיש מועמדות</a>
-    </div>
-    <div class="note" style="max-width:680px;margin-inline:auto"><b>תפקיד הסקשן:</b> CTA יחיד וממוקד למועמדים, בלי הסחות. אם בעתיד תרצו ערוץ לתורמים/שותפים — עדיף בדף נפרד.</div>
+  <div class="wrap reveal">
+    <div class="kicker">— צעד הבא —</div>
+    <h2>מוכנים להיכנס <span class="accent">לתעשייה?</span></h2>
+    <p>בדקו זכאות והגישו מועמדות. אנחנו ננווט אתכם מהיום הראשון ועד למשרת הליבה הראשונה.</p>
+    <a class="btn-primary" href="#">הגישו מועמדות</a>
+    <div class="micro">הליווי מתחיל ביום שהמועמדות מתקבלת.</div>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap">
     <div class="cols">
       <div>
-        <div class="foot-brand">טק קריירה × עולים ביחד</div>
-        <p style="color:#9fb4bc">צמצום הפער הדיגיטלי ומוביליות חברתית דרך הכשרה, התמחות והשמה בתעשיית ההייטק.</p>
+        <div class="foot-brand">טק קריירה <span>×</span> עולים ביחד</div>
+        <p style="color:#9fb4bc; max-width:32ch">צמצום הפער הדיגיטלי ומוביליות חברתית דרך הכשרה, התמחות והשמה בתעשיית הטכנולוגיה.</p>
       </div>
-      <div><b>מסלולים</b><a href="#">Full Stack</a><a href="#">Data</a><a href="#">Cyber</a><a href="#">QA</a></div>
-      <div><b>העמותה</b><a href="#">אודות</a><a href="#">בוגרים</a><a href="#">השותפות</a><a href="#">צור קשר</a></div>
-      <div><b>הצטרפות</b><a href="#join">הגשת מועמדות</a></div>
+      <div>
+        <b>מסלולים</b>
+        <a href="#">Full Stack</a>
+        <a href="#">Data</a>
+        <a href="#">Cyber</a>
+        <a href="#">QA</a>
+      </div>
+      <div>
+        <b>העמותה</b>
+        <a href="#">אודות</a>
+        <a href="#">בוגרים</a>
+        <a href="#">השותפות</a>
+        <a href="#">צור קשר</a>
+      </div>
+      <div>
+        <b>הצטרפות</b>
+        <a href="#join">הגשת מועמדות</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 טק קריירה (ע"ר) · כל הזכויות שמורות.</span>
+      <span>הבעל שם טוב 6, לוד</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // reveal on scroll
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.style.animationPlayState='running'; obs.unobserve(e.target); }});
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.style.animationPlayState='running';
+        obs.unobserve(e.target);
+      }
+    });
   }, {threshold:0.08});
   document.querySelectorAll('.reveal').forEach(el => {
     el.style.animationPlayState = 'paused';

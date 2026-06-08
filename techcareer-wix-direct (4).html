@@ -170,6 +170,11 @@ footer p+p{margin-top:7px;font-size:11px}
   .stats-cards{grid-template-columns:1fr 1fr}
   .p-grid{grid-template-columns:repeat(2,1fr)}
   .t-card{min-width:88%}
+  .timeline-line{display:none !important}
+}
+@media(max-width:640px){
+  [data-ba]{grid-template-columns:1fr !important}
+  .timeline-line{display:none !important}
 }
 @media(max-width:768px){
   .hero h1{font-size:38px !important}
@@ -202,8 +207,17 @@ footer p+p{margin-top:7px;font-size:11px}
 </head>
 <body>
 
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(12,31,63,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(56,189,248,.12);padding:12px 24px;display:flex;align-items:center;justify-content:space-between">
+  <span style="color:#fff;font-weight:800;font-size:15px">טק-<span style="color:#38BDF8">קריירה</span></span>
+  <div style="display:flex;gap:12px;align-items:center">
+    <a href="#courses" style="color:rgba(255,255,255,.7);font-size:13px;text-decoration:none">קורסים</a>
+    <a href="#faq" style="color:rgba(255,255,255,.7);font-size:13px;text-decoration:none">שאלות</a>
+    <a class="btn-red" href="#cta" style="padding:8px 18px;font-size:13px">הגש מועמדות ←</a>
+  </div>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero" style="padding-top:60px">
   <div class="hero-orb1"></div>
   <div class="hero-orb2"></div>
   <div class="hero-grid"></div>
@@ -222,6 +236,16 @@ footer p+p{margin-top:7px;font-size:11px}
       <div class="stat"><div class="stat-num">20+</div><div class="stat-label">שנות ניסיון</div></div>
       <div class="stat"><div class="stat-num">100+</div><div class="stat-label">בוגרים בהייטק</div></div>
     </div>
+    <div style="margin-bottom:28px">
+  <p style="color:rgba(255,255,255,.4);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px">בוגרינו עובדים ב</p>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:center;opacity:.75">
+    <span style="color:#fff;font-weight:800;font-size:13px;background:rgba(255,255,255,.08);padding:5px 14px;border-radius:6px">Amazon</span>
+    <span style="color:#fff;font-weight:800;font-size:13px;background:rgba(255,255,255,.08);padding:5px 14px;border-radius:6px">AT&T</span>
+    <span style="color:#fff;font-weight:800;font-size:13px;background:rgba(255,255,255,.08);padding:5px 14px;border-radius:6px">Cognyte</span>
+    <span style="color:#fff;font-weight:800;font-size:13px;background:rgba(255,255,255,.08);padding:5px 14px;border-radius:6px">Toluna</span>
+    <span style="color:#fff;font-weight:800;font-size:13px;background:rgba(255,255,255,.08);padding:5px 14px;border-radius:6px">ועוד</span>
+  </div>
+</div>
     <div class="hero-btns">
       <a class="btn-red" href="#cta">הגש מועמדות עכשיו ←</a>
       <a class="btn-ghost" href="#courses">הקורסים שלנו</a>
@@ -241,6 +265,14 @@ footer p+p{margin-top:7px;font-size:11px}
     <div class="stats-bar-item"><span>&#128188;</span><span>90% השמה בתעשייה</span></div>
     <div class="stats-bar-item"><span>&#128205;</span><span>הבעל שם טוב 6, לוד</span></div>
   </div>
+</div>
+
+<div style="background:#1a1a2e;padding:12px 24px;text-align:center;border-bottom:1px solid rgba(245,166,35,.2)">
+  <p style="color:rgba(255,255,255,.9);font-size:13px;font-weight:600;margin:0">
+    <span style="color:#F5A623;font-weight:800">⚡ המחזור הקרוב מתחיל ספטמבר 2025</span>
+    &nbsp;—&nbsp; נותרו <span style="color:#F5A623;font-weight:900">12 מקומות</span> בלבד.
+    <a href="#cta" style="color:#38BDF8;text-decoration:underline;font-weight:700;margin-right:8px">הגש מועמדות עכשיו</a>
+  </p>
 </div>
 
 <!-- ABOUT -->
@@ -279,6 +311,40 @@ footer p+p{margin-top:7px;font-size:11px}
   </div>
 </section>
 
+<!-- BEFORE / AFTER -->
+<section style="background:linear-gradient(180deg,#fff 0%,#F0F9FF 100%);padding:72px 24px">
+  <div class="inner">
+    <div class="rv" style="text-align:center;margin-bottom:48px">
+      <div class="pill">השינוי שאנחנו יוצרים</div>
+      <h2 class="sec-title">מאיפה מגיעים — לאן מגיעים</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center" class="rv">
+      <!-- לפני -->
+      <div style="background:#FFF5F5;border:1px solid #FEE2E2;border-radius:16px;padding:28px 24px">
+        <div style="font-size:13px;font-weight:800;color:#EF4444;letter-spacing:1px;margin-bottom:16px;text-transform:uppercase">לפני טק-קריירה</div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li style="padding:9px 0;border-bottom:1px solid #FEE2E2;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#EF4444;font-size:16px">✗</span> חוסר כיוון מקצועי</li>
+          <li style="padding:9px 0;border-bottom:1px solid #FEE2E2;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#EF4444;font-size:16px">✗</span> חסמי כניסה לתעשייה</li>
+          <li style="padding:9px 0;border-bottom:1px solid #FEE2E2;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#EF4444;font-size:16px">✗</span> חוסר רשת מקצועית</li>
+          <li style="padding:9px 0;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#EF4444;font-size:16px">✗</span> אי ודאות לגבי העתיד</li>
+        </ul>
+      </div>
+      <!-- חץ -->
+      <div style="text-align:center;font-size:32px;color:#38BDF8;font-weight:900">←</div>
+      <!-- אחרי -->
+      <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:16px;padding:28px 24px">
+        <div style="font-size:13px;font-weight:800;color:#16A34A;letter-spacing:1px;margin-bottom:16px;text-transform:uppercase">אחרי טק-קריירה</div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li style="padding:9px 0;border-bottom:1px solid #BBF7D0;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#16A34A;font-size:16px">✓</span> הסמכות מוכרות בתעשייה</li>
+          <li style="padding:9px 0;border-bottom:1px solid #BBF7D0;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#16A34A;font-size:16px">✓</span> עבודה בחברות מובילות</li>
+          <li style="padding:9px 0;border-bottom:1px solid #BBF7D0;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#16A34A;font-size:16px">✓</span> רשת בוגרים ומנטורים</li>
+          <li style="padding:9px 0;font-size:14px;color:#374151;display:flex;gap:10px;align-items:center"><span style="color:#16A34A;font-size:16px">✓</span> קריירה טכנולוגית ברורה</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section class="services">
   <div class="inner">
@@ -294,6 +360,46 @@ footer p+p{margin-top:7px;font-size:11px}
       <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#F97316"></div><div class="svc-icon" style="background:#F9731615">&#128188;</div><h3>שירותי השמה</h3><p>קשרים עם חברות מובילות — 90% השמה מוכחת.</p></div>
       <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#EC4899"></div><div class="svc-icon" style="background:#EC489915">&#128187;</div><h3>מעבדות מחשבים חדישות</h3><p>גישה לתשתיות טכנולוגיות מתקדמות ברמה תעשייתית.</p></div>
       <div class="svc-card rv"><div style="position:absolute;top:0;right:0;left:0;height:3px;background:#22C55E"></div><div class="svc-icon" style="background:#22C55E15">&#128176;</div><h3>מלגות מחייה</h3><p>סטודנטים בפנימייה מקבלים מלגות מחייה לאורך ההכשרה.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="rv">
+      <a class="btn-red" href="#cta">אני רוצה להתחיל ←</a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY TIMELINE -->
+<section style="background:#fff;padding:72px 24px">
+  <div class="inner">
+    <div class="rv" style="text-align:center;margin-bottom:48px">
+      <div class="pill">התהליך שלנו</div>
+      <h2 class="sec-title">מהגשה להשמה — 4 שלבים</h2>
+      <p class="sec-sub">תהליך מיון קפדני + הכשרה אינטנסיבית + ליווי עד לעבודה</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative" class="rv">
+      <div style="position:absolute;top:36px;right:12.5%;left:12.5%;height:2px;background:linear-gradient(90deg,#38BDF8,#0EA5E9);z-index:0;display:block" class="timeline-line"></div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#0EA5E9,#38BDF8);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:26px;box-shadow:0 4px 20px rgba(14,165,233,.3)">📝</div>
+        <div style="font-weight:900;color:#0F172A;margin-bottom:6px;font-size:15px">הגשת מועמדות</div>
+        <div style="color:#64748B;font-size:12px;line-height:1.6">מלאו טופס פשוט — תוך 3 דקות</div>
+      </div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#8B5CF6,#A78BFA);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:26px;box-shadow:0 4px 20px rgba(139,92,246,.3)">🎯</div>
+        <div style="font-weight:900;color:#0F172A;margin-bottom:6px;font-size:15px">תהליך מיון</div>
+        <div style="color:#64748B;font-size:12px;line-height:1.6">ראיון אישי + הערכת כישורים</div>
+      </div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#F97316,#FBBF24);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:26px;box-shadow:0 4px 20px rgba(249,115,22,.3)">🎓</div>
+        <div style="font-weight:900;color:#0F172A;margin-bottom:6px;font-size:15px">הכשרה אינטנסיבית</div>
+        <div style="color:#64748B;font-size:12px;line-height:1.6">8-10 חודשים + פיתוח אישי</div>
+      </div>
+      <div style="text-align:center;position:relative;z-index:1">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#10B981,#34D399);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:26px;box-shadow:0 4px 20px rgba(16,185,129,.3)">💼</div>
+        <div style="font-weight:900;color:#0F172A;margin-bottom:6px;font-size:15px">השמה בהייטק</div>
+        <div style="color:#64748B;font-size:12px;line-height:1.6">90% מהבוגרים מועסקים</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="rv">
+      <a class="btn-red" href="#cta">התחל את המסע שלך ←</a>
     </div>
   </div>
 </section>
@@ -372,6 +478,24 @@ footer p+p{margin-top:7px;font-size:11px}
     </div>
   </div>
 </section>
+
+<!-- FEATURED TESTIMONIAL -->
+<div style="background:#F0F9FF;padding:48px 24px;border-top:1px solid #E0F2FE">
+  <div class="inner">
+    <div style="max-width:720px;margin:0 auto;text-align:center" class="rv">
+      <div style="font-size:48px;color:#38BDF8;line-height:1;margin-bottom:16px">"</div>
+      <p style="font-size:clamp(17px,2.5vw,22px);color:#0F172A;line-height:1.75;font-weight:500;margin-bottom:24px;font-style:italic">"לאורך עשרת החודשים של למידה מעשירה ומאתגרת, טק-קריירה הייתה עבורי הרבה יותר ממקום לימודים. הצוות המדהים ליווה אותי בכל צעד בדרך — וסיפק לי כלים להתמודד עם כל אתגר."</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px">
+        <div style="width:52px;height:52px;border-radius:50%;background:#1E3A5F;display:flex;align-items:center;justify-content:center;font-weight:900;color:#38BDF8;font-size:20px;border:3px solid #38BDF8">מ</div>
+        <div style="text-align:right">
+          <div style="font-weight:800;color:#0F172A;font-size:15px">מדלן טדלה</div>
+          <div style="color:#64748B;font-size:13px">FSE · Cognyte — בוגרת 2024</div>
+          <div style="color:#FBBF24;font-size:13px;letter-spacing:2px">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- TESTIMONIALS -->
 <section class="testimonials">
@@ -478,6 +602,56 @@ footer p+p{margin-top:7px;font-size:11px}
       <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_c454635d4b8641aa8eddd290a3d8d5cf~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_c454635d4b8641aa8eddd290a3d8d5cf~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 6"></div>
       <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_3b594d53bf604f0d82fffbf502192597~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_3b594d53bf604f0d82fffbf502192597~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 7"></div>
       <div class="p-slot"><img src="https://static.wixstatic.com/media/955558_1f86b9f05f044401bce7ddb6ee42ec12~mv2.png/v1/fit/w_150,h_75,q_90,enc_avif,quality_auto/955558_1f86b9f05f044401bce7ddb6ee42ec12~mv2.png" onerror="this.outerHTML='<span style=font-size:11px;color:#aaa>שותף</span>'" alt="שותף 8"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:#fff;padding:72px 24px">
+  <div class="inner">
+    <div class="rv" style="text-align:center;margin-bottom:48px">
+      <div class="pill">שאלות נפוצות</div>
+      <h2 class="sec-title">יש לכם שאלות — יש לנו תשובות</h2>
+    </div>
+    <div style="max-width:720px;margin:0 auto" class="rv" id="faqList">
+      <div class="faq-item" style="border-bottom:1px solid #E0F2FE">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:right;padding:20px 0;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Heebo',sans-serif">
+          <span style="font-weight:700;color:#0F172A;font-size:15px">מי יכול להגיש מועמדות?</span>
+          <span style="color:#38BDF8;font-size:22px;font-weight:300;transition:.25s" class="faq-arrow">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding-bottom:20px;color:#64748B;font-size:14px;line-height:1.85">צעירים יוצאי אתיופיה בגילאי 18-30, בעלי תעודת בגרות או שירות צבאי/לאומי. אין צורך בניסיון טכנולוגי קודם — אנחנו מחפשים מוטיבציה, יכולת למידה ורצון אמיתי לשינוי.</div>
+      </div>
+      <div class="faq-item" style="border-bottom:1px solid #E0F2FE">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:right;padding:20px 0;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Heebo',sans-serif">
+          <span style="font-weight:700;color:#0F172A;font-size:15px">כמה עולה ההכשרה?</span>
+          <span style="color:#38BDF8;font-size:22px;font-weight:300;transition:.25s" class="faq-arrow">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding-bottom:20px;color:#64748B;font-size:14px;line-height:1.85">ההכשרה מסובסדת במלואה. סטודנטים בפנימייה מקבלים גם מלגות מחייה לאורך כל תקופת ההכשרה. המטרה שלנו היא שהכסף לא יהיה חסם לאף אחד.</div>
+      </div>
+      <div class="faq-item" style="border-bottom:1px solid #E0F2FE">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:right;padding:20px 0;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Heebo',sans-serif">
+          <span style="font-weight:700;color:#0F172A;font-size:15px">כמה זמן נמשכת ההכשרה?</span>
+          <span style="color:#38BDF8;font-size:22px;font-weight:300;transition:.25s" class="faq-arrow">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding-bottom:20px;color:#64748B;font-size:14px;line-height:1.85">8-10 חודשים, תלוי במסלול. ההכשרה כוללת לימודים טכניים, סדנאות פיתוח אישי וחיבור לתעשייה — הכל תחת קורת גג אחת.</div>
+      </div>
+      <div class="faq-item" style="border-bottom:1px solid #E0F2FE">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:right;padding:20px 0;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Heebo',sans-serif">
+          <span style="font-weight:700;color:#0F172A;font-size:15px">האם ההסמכות מוכרות?</span>
+          <span style="color:#38BDF8;font-size:22px;font-weight:300;transition:.25s" class="faq-arrow">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding-bottom:20px;color:#64748B;font-size:14px;line-height:1.85">כן. הקורסים מוכרים ע"י משרד העבודה ומוכרים כנקודות זכות במל"ג. בנוסף, הסמכות תעשייתיות כמו CCNA מוכרות בכל שוק העבודה הגלובלי.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleFaq(this)" style="width:100%;text-align:right;padding:20px 0;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Heebo',sans-serif">
+          <span style="font-weight:700;color:#0F172A;font-size:15px">מה אחוז ההשמה בפועל?</span>
+          <span style="color:#38BDF8;font-size:22px;font-weight:300;transition:.25s" class="faq-arrow">+</span>
+        </button>
+        <div class="faq-body" style="display:none;padding-bottom:20px;color:#64748B;font-size:14px;line-height:1.85">90% מהבוגרים מועסקים בתעשיית ההייטק. אנחנו עובדים עם חברות מובילות כמו Amazon, AT&T, Cognyte ועוד — ולא מסיימים ליווי עד שהבוגר/ת מוצא/ת עבודה.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="rv">
+      <a class="btn-red" href="#cta">עדיין יש שאלות? דברו איתנו ←</a>
     </div>
   </div>
 </section>
@@ -660,6 +834,20 @@ document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
   buildDots(); goTo(0);
   window.addEventListener('resize',function(){buildDots();goTo(0);});
 })();
+
+function toggleFaq(btn) {
+  var body = btn.nextElementSibling;
+  var arrow = btn.querySelector('.faq-arrow');
+  var isOpen = body.style.display === 'block';
+  // close all
+  document.querySelectorAll('.faq-body').forEach(function(b){ b.style.display='none'; });
+  document.querySelectorAll('.faq-arrow').forEach(function(a){ a.textContent='+'; a.style.transform=''; });
+  // open clicked if was closed
+  if (!isOpen) {
+    body.style.display = 'block';
+    arrow.textContent = '×';
+  }
+}
 </script>
 </body>
 </html>

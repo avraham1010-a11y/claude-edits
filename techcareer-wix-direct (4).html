@@ -318,27 +318,55 @@
   }
   .partner .manifesto .accent{font-family:var(--serif); font-weight:900; color:#ff8b6e; letter-spacing:-0.012em}
   .partner .manifesto .muted{color:rgba(255,255,255,.4); font-family:var(--sans); font-weight:900}
+  /* accordion */
   .partner-two{
-    display:grid; grid-template-columns:1fr 1px 1fr; gap:64px;
     padding-top:48px; border-top:1px solid rgba(255,255,255,.18);
+    display:flex; flex-direction:column; gap:0;
   }
-  @media (max-width:880px){.partner-two{grid-template-columns:1fr; gap:48px} .partner-two .divider{display:none}}
-  .partner-two .divider{background:rgba(255,255,255,.18); justify-self:center; width:1px}
+  .partner-col{
+    border-bottom:1px solid rgba(255,255,255,.15);
+  }
+  .partner-col-trigger{
+    display:flex; align-items:center; justify-content:space-between;
+    width:100%; background:none; border:none; cursor:pointer;
+    padding:28px 0; color:inherit; text-align:inherit; gap:16px;
+  }
+  .partner-col-trigger:focus-visible{outline:2px dashed rgba(255,255,255,.5); outline-offset:4px;}
+  .partner-col-label{
+    display:flex; align-items:center; gap:12px;
+  }
   .partner-col .ptag{
     font-family:var(--sans); font-weight:700; font-size:.78rem;
     letter-spacing:.18em; text-transform:uppercase;
-    margin-bottom:20px; display:flex; align-items:center; gap:10px;
+    display:flex; align-items:center; gap:10px; margin:0;
   }
   .partner-col.tc .ptag{color:#7fe7dc}
   .partner-col.tc .ptag .d{background:var(--teal)}
   .partner-col.ub .ptag{color:#f0c674}
   .partner-col.ub .ptag .d{background:var(--gold)}
-  .partner-col .ptag .d{width:9px;height:9px;border-radius:50%}
+  .partner-col .ptag .d{width:9px;height:9px;border-radius:50%;display:inline-block;}
   .partner-col h3{
-    font-family:var(--sans); font-weight:900; font-size:1.7rem;
-    margin-bottom:20px; letter-spacing:-0.015em;
+    font-family:var(--sans); font-weight:900; font-size:1.4rem;
+    letter-spacing:-0.015em; color:#fff; margin:0;
   }
-  .partner-col p{color:rgba(255,255,255,.72); font-size:1.04rem; line-height:1.8; margin:0}
+  .partner-col-arrow{
+    flex-shrink:0; width:28px; height:28px; border:1px solid rgba(255,255,255,.22);
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    transition:transform .3s ease, background .3s ease;
+  }
+  .partner-col-arrow svg{transition:transform .3s ease;}
+  .partner-col[aria-expanded="true"] .partner-col-arrow{background:rgba(255,255,255,.1);}
+  .partner-col[aria-expanded="true"] .partner-col-arrow svg{transform:rotate(180deg);}
+  .partner-col-body{
+    display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s ease;
+    overflow:hidden;
+  }
+  .partner-col[aria-expanded="true"] .partner-col-body{grid-template-rows:1fr;}
+  .partner-col-inner{
+    min-height:0; padding-bottom:0; transition:padding-bottom .35s ease;
+  }
+  .partner-col[aria-expanded="true"] .partner-col-inner{padding-bottom:28px;}
+  .partner-col p{color:rgba(255,255,255,.72); font-size:1.04rem; line-height:1.8; margin:0; padding-inline-start:2px;}
 
   /* ============ STORIES (magazine pull-quotes) ============ */
   .stories .lead-quote{
@@ -713,16 +741,41 @@
       </h2>
     </div>
     <div class="partner-two reveal" style="animation-delay:.08s">
-      <div class="partner-col tc">
-        <div class="ptag"><span class="d"></span> טק קריירה</div>
-        <h3>מנוע ההכשרה וההשמה.</h3>
-        <p>מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה הראשונה.</p>
+      <div class="partner-col tc" aria-expanded="false">
+        <button class="partner-col-trigger" aria-controls="tc-body" onclick="toggleAccordion(this)">
+          <div class="partner-col-label">
+            <div class="ptag"><span class="d"></span> טק קריירה</div>
+            <h3>מנוע ההכשרה וההשמה.</h3>
+          </div>
+          <span class="partner-col-arrow" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 4L6 8L10 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="partner-col-body" id="tc-body" role="region">
+          <div class="partner-col-inner">
+            <p>מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה הראשונה.</p>
+          </div>
+        </div>
       </div>
-      <div class="divider" aria-hidden="true"></div>
-      <div class="partner-col ub">
-        <div class="ptag"><span class="d"></span> עולים ביחד</div>
-        <h3>העומק הקהילתי והאקדמי.</h3>
-        <p>מביאה את הליווי האקדמי, פיתוח המנהיגות הבכירה והקהילה של הבוגרים, וגישור בין המצוינות האישית להשתלבות חברתית-כלכלית רחבה.</p>
+      <div class="partner-col ub" aria-expanded="false">
+        <button class="partner-col-trigger" aria-controls="ub-body" onclick="toggleAccordion(this)">
+          <div class="partner-col-label">
+            <div class="ptag"><span class="d"></span> עולים ביחד</div>
+            <h3>העומק הקהילתי והאקדמי.</h3>
+          </div>
+          <span class="partner-col-arrow" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 4L6 8L10 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="partner-col-body" id="ub-body" role="region">
+          <div class="partner-col-inner">
+            <p>מביאה את הליווי האקדמי, פיתוח המנהיגות הבכירה והקהילה של הבוגרים, וגישור בין המצוינות האישית להשתלבות חברתית-כלכלית רחבה.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -821,6 +874,12 @@
 </footer>
 
 <script>
+  function toggleAccordion(btn){
+    const col = btn.closest('.partner-col');
+    const expanded = col.getAttribute('aria-expanded') === 'true';
+    col.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  }
+
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if(e.isIntersecting){

@@ -190,18 +190,15 @@
   .partner .org-card .feat p{color:#a9bcc4}
   .partner .org-card.tc .role{color:#7fe7dc} .partner .org-card.ub .role{color:#f0c674}
 
-  /* accordion (native <details>, no JS needed) */
+  /* accordion — checkbox/label, zero JS, works everywhere */
   .partner-accordion{display:flex; flex-direction:column; gap:0; margin-top:0}
   .acc-item{border-bottom:1px solid rgba(255,255,255,.15)}
   .acc-item:first-child{border-top:1px solid rgba(255,255,255,.15)}
+  .acc-checkbox{display:none}
   .acc-trigger{
     display:flex; align-items:center; justify-content:space-between;
-    width:100%; cursor:pointer; padding:24px 0; color:#fff; gap:16px;
-    list-style:none;
+    width:100%; cursor:pointer; padding:24px 0; color:#fff; gap:16px; user-select:none;
   }
-  .acc-trigger::-webkit-details-marker{display:none}
-  .acc-trigger::marker{content:""}
-  .acc-trigger:focus-visible{outline:2px dashed rgba(255,255,255,.4); outline-offset:4px}
   .acc-trigger-label{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
   .acc-orgtag{
     display:inline-flex; align-items:center; gap:8px;
@@ -220,16 +217,12 @@
     transition:transform .3s ease, background .3s ease;
   }
   .acc-arrow svg{transition:transform .3s ease}
-  .acc-item[open] .acc-arrow{background:rgba(255,255,255,.1)}
-  .acc-item[open] .acc-arrow svg{transform:rotate(180deg)}
-  .acc-body{overflow:hidden}
-  .acc-item[open] .acc-body{animation:accSlide .35s ease}
-  @keyframes accSlide{from{opacity:0; transform:translateY(-8px)} to{opacity:1; transform:none}}
+  .acc-body{display:none}
+  .acc-checkbox:checked ~ .acc-trigger .acc-arrow{background:rgba(255,255,255,.1)}
+  .acc-checkbox:checked ~ .acc-trigger .acc-arrow svg{transform:rotate(180deg)}
+  .acc-checkbox:checked ~ .acc-body{display:block}
   .acc-inner{padding-bottom:28px}
   .acc-inner p{color:rgba(255,255,255,.72); font-size:1.04rem; line-height:1.8; margin:0}
-  .acc-inner .role{font-family:"Rubik"; font-weight:700; font-size:.95rem; margin-bottom:10px}
-  .acc-item.tc .acc-inner .role{color:#7fe7dc}
-  .acc-item.ub .acc-inner .role{color:#f0c674}
 
   .vs{display:flex;align-items:center;justify-content:center; align-self:center}
   .vs .ring{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.08);
@@ -403,8 +396,9 @@
       <p class="lead">השותפות מחברת מנוע הכשרה והשמה טכנולוגי עם עומק קהילתי, ליווי אקדמי ומודל מנהיגות — לטובת השתלבות חברתית וכלכלית רחבה.</p>
     </div>
     <div class="partner-accordion reveal" style="animation-delay:.08s">
-      <details class="acc-item tc">
-        <summary class="acc-trigger">
+      <div class="acc-item tc">
+        <input type="checkbox" id="acc-tc" class="acc-checkbox">
+        <label for="acc-tc" class="acc-trigger">
           <div class="acc-trigger-label">
             <span class="acc-orgtag tc"><span class="d"></span> טק קריירה</span>
             <span class="acc-title">מנוע ההכשרה וההשמה</span>
@@ -414,15 +408,16 @@
               <path d="M2 4L6 8L10 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-        </summary>
+        </label>
         <div class="acc-body">
           <div class="acc-inner">
             <p>מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה.</p>
           </div>
         </div>
-      </details>
-      <details class="acc-item ub">
-        <summary class="acc-trigger">
+      </div>
+      <div class="acc-item ub">
+        <input type="checkbox" id="acc-ub" class="acc-checkbox">
+        <label for="acc-ub" class="acc-trigger">
           <div class="acc-trigger-label">
             <span class="acc-orgtag ub"><span class="d"></span> עולים ביחד</span>
             <span class="acc-title">העומק הקהילתי והאקדמי</span>
@@ -432,13 +427,13 @@
               <path d="M2 4L6 8L10 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-        </summary>
+        </label>
         <div class="acc-body">
           <div class="acc-inner">
             <p>מביאה את הליווי האקדמי, פיתוח המנהיגות הבכירה ומודל הבוגר, וגישור בין המצוינות האישית להשתלבות חברתית-כלכלית רחבה.</p>
           </div>
         </div>
-      </details>
+      </div>
     </div>
     <div class="note" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#eaf6f4"><b>תפקיד הסקשן:</b> מסביר את הדו-כיווניות בלי לבלבל. שאלה לבירור: רוצים גם לוגו/קישור נפרד לאתר עולים ביחד?</div>
   </div>

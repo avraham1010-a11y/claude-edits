@@ -191,38 +191,53 @@
   .partner .org-card.tc .role{color:#7fe7dc} .partner .org-card.ub .role{color:#f0c674}
 
   /* accordion — checkbox/label, zero JS, works everywhere */
-  .partner-accordion{display:flex; flex-direction:column; gap:0; margin-top:0}
-  .acc-item{border-bottom:1px solid rgba(255,255,255,.15)}
-  .acc-item:first-child{border-top:1px solid rgba(255,255,255,.15)}
+  .partner-accordion{display:flex; flex-direction:column; gap:16px; margin-top:8px; max-width:880px; margin-inline:auto}
+  .acc-item{
+    position:relative; overflow:hidden;
+    border:1px solid rgba(255,255,255,.12); border-radius:18px;
+    background:rgba(255,255,255,.035);
+    transition:background .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .acc-item::before{
+    content:""; position:absolute; inset-inline-start:0; top:0; bottom:0; width:4px;
+  }
+  .acc-item.tc::before{background:linear-gradient(180deg,var(--teal),#7fe7dc)}
+  .acc-item.ub::before{background:linear-gradient(180deg,var(--gold),#f0c674)}
+  .acc-item:hover{background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.22)}
   .acc-checkbox{display:none}
   .acc-trigger{
     display:flex; align-items:center; justify-content:space-between;
-    width:100%; cursor:pointer; padding:24px 0; color:#fff; gap:16px; user-select:none;
+    width:100%; cursor:pointer; padding:26px 30px; color:#fff; gap:16px; user-select:none;
   }
-  .acc-trigger-label{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+  .acc-trigger-label{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
   .acc-orgtag{
     display:inline-flex; align-items:center; gap:8px;
-    font-family:"Rubik"; font-weight:700; font-size:.78rem;
-    letter-spacing:.1em; text-transform:uppercase; border-radius:999px; padding:5px 13px;
+    font-family:"Rubik"; font-weight:700; font-size:.74rem;
+    letter-spacing:.1em; text-transform:uppercase; border-radius:999px; padding:6px 14px;
   }
   .acc-orgtag.tc{background:rgba(19,168,154,.18); color:#7fe7dc}
   .acc-orgtag.ub{background:rgba(217,154,43,.18); color:#f0c674}
   .acc-orgtag .d{width:8px;height:8px;border-radius:50%;display:inline-block}
   .acc-orgtag.tc .d{background:#7fe7dc} .acc-orgtag.ub .d{background:#f0c674}
-  .acc-title{font-family:"Rubik"; font-weight:800; font-size:1.22rem; color:#fff; margin:0}
+  .acc-title{font-family:"Rubik"; font-weight:800; font-size:1.28rem; color:#fff; margin:0}
   .acc-arrow{
-    flex-shrink:0; width:30px; height:30px;
-    border:1px solid rgba(255,255,255,.2); border-radius:50%;
+    flex-shrink:0; width:36px; height:36px;
+    border:1px solid rgba(255,255,255,.22); border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    transition:transform .3s ease, background .3s ease;
+    transition:transform .35s ease, background .3s ease, border-color .3s ease;
   }
-  .acc-arrow svg{transition:transform .3s ease}
-  .acc-body{display:none}
-  .acc-checkbox:checked ~ .acc-trigger .acc-arrow{background:rgba(255,255,255,.1)}
-  .acc-checkbox:checked ~ .acc-trigger .acc-arrow svg{transform:rotate(180deg)}
-  .acc-checkbox:checked ~ .acc-body{display:block}
-  .acc-inner{padding-bottom:28px}
-  .acc-inner p{color:rgba(255,255,255,.72); font-size:1.04rem; line-height:1.8; margin:0}
+  .acc-arrow svg{transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .acc-body{
+    display:grid; grid-template-rows:0fr; opacity:0;
+    transition:grid-template-rows .4s ease, opacity .4s ease;
+  }
+  .acc-inner{overflow:hidden; min-height:0}
+  .acc-checkbox:checked + .acc-trigger .acc-arrow{background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.35)}
+  .acc-checkbox:checked + .acc-trigger .acc-arrow svg{transform:rotate(180deg)}
+  .acc-checkbox:checked ~ .acc-body{grid-template-rows:1fr; opacity:1}
+  .acc-inner-pad{padding:0 30px 28px 30px}
+  .acc-inner-pad p{color:rgba(255,255,255,.78); font-size:1.06rem; line-height:1.85; margin:0; padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.1)}
 
   .vs{display:flex;align-items:center;justify-content:center; align-self:center}
   .vs .ring{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.08);
@@ -411,7 +426,9 @@
         </label>
         <div class="acc-body">
           <div class="acc-inner">
-            <p>מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה.</p>
+            <div class="acc-inner-pad">
+              <p>מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -430,7 +447,9 @@
         </label>
         <div class="acc-body">
           <div class="acc-inner">
+            <div class="acc-inner-pad">
             <p>מביאה את הליווי האקדמי, פיתוח המנהיגות הבכירה ומודל הבוגר, וגישור בין המצוינות האישית להשתלבות חברתית-כלכלית רחבה.</p>
+            </div>
           </div>
         </div>
       </div>

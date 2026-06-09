@@ -142,6 +142,7 @@
   .g-4{grid-template-columns:repeat(4,1fr)}
   @media(max-width:900px){.g-3,.g-4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
+  @media(max-width:620px){#webinar .webinar-tracks{grid-template-columns:1fr}}
   .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     padding:30px; box-shadow:0 2px 14px rgba(11,34,48,.04); transition:transform .2s ease, box-shadow .2s ease}
   .card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(11,34,48,.1)}
@@ -362,130 +363,45 @@
   </div>
 </section>
 
-<!-- ============ למה דווקא כאן (יתרונות 2+2) ============ -->
-<section id="advantages">
+<!-- ============ וובינר ============ -->
+<section id="webinar" style="background:#fff;border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>למה דווקא כאן?</h2>
-      <p class="lead">ארבעה יתרונות שאי-אפשר למצוא במקום אחר — שניים מכל עמותה.</p>
+      <span class="eyebrow teal">אירוע מקוון · ללא עלות</span>
+      <h2 style="margin-top:12px">הכירו את המיזם —<br><span style="color:var(--teal-d)">וובינר מידע פתוח</span></h2>
+      <p class="lead">טק קריירה ועולים ביחד מזמינים אתכם לוובינר בו נסביר על השותפות, על המסלולים הקיימים ועל הדרך מהיום הראשון ועד למשרת הליבה.</p>
     </div>
-    <div class="grid g-2">
-      <div class="adv tc reveal"><div class="mini">טק קריירה</div><h3>חיבור ישיר לתעשייה</h3><p>מרצים מהשורה הראשונה בהייטק — כדוגמת Cognizant, Bynet ו-NESS. ידע מעשי מהיום הראשון.</p></div>
-      <div class="adv tc reveal" style="animation-delay:.08s"><div class="mini">טק קריירה</div><h3>תוכנית התמחות מובנית</h3><p>שילוב הבוגרים בהתמחות מעשית — היתרון שמייצר את הניסיון שחסר לג'וניור וצולח את מחסום ההשמה הראשון.</p></div>
-      <div class="adv ub reveal" style="animation-delay:.16s"><div class="mini">עולים ביחד</div><h3>ליווי אישי מתקדם</h3><p>בניית "חליפת ליווי אישית" למצטיינים בתחומי הרפואה, המדעים והתארים המתקדמים.</p></div>
-      <div class="adv ub reveal" style="animation-delay:.24s"><div class="mini">עולים ביחד</div><h3>פיתוח הנהגה בכירה</h3><p>הכשרת מנהלים מנוסים לתפקידי C-Level ודירקטוריונים, תוך עבודה עם מנטורים מהשורה הראשונה במשק.</p></div>
-    </div>
-    <div class="note"><b>תפקיד הסקשן:</b> ליבת הבידול. שמות החברות (Cognizant / Bynet / NESS) הם נכס אמון — כדאי גם כשורת לוגואים. לאמת הרשאות שימוש.</div>
-  </div>
-</section>
 
-<!-- ============ למה אנחנו? (תוכניות הדגל) ============ -->
-<section id="why" style="background:#fff;border-block:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow gold">תוכניות הדגל</span>
-      <h2>למה אנחנו?</h2>
-      <p class="lead">התוכניות שמובילות את הבוגרים שלנו מהכיתה אל משרות הליבה והמנהיגות.</p>
-    </div>
-    <div class="grid g-2">
-      <div class="org-card ub reveal">
-        <span class="tag-org ub"><span class="d"></span> עולים ביחד</span>
-        <div class="feat"><span class="fic">🎓</span><div><h4>הכוונת סטודנטים</h4><p>תוכנית להגדלת הייצוג במוסדות מובילים, ותוכנית "טסה" להתמחות מעשית בשכר לסטודנטים מצטיינים.</p></div></div>
-        <div class="feat"><span class="fic">📊</span><div><h4>פיתוח ניהולי וקריירה</h4><p>תוכנית הדגל להשמה במשרות איכותיות, תוכניות "עתודה לניהול", הכשרת מנהלי משאבי אנוש (HR), ועתודה למנהיגות בחינוך ובשירות הציבורי ("משפיעים").</p></div></div>
+    <div class="webinar-tracks reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:860px;margin:0 auto 48px">
+      <div class="card" style="padding:26px 28px">
+        <span class="tag-org tc" style="margin-bottom:14px"><span class="d"></span> טק קריירה</span>
+        <ul style="margin:0;padding-inline-start:18px;color:var(--muted);font-size:1rem;line-height:1.9">
+          <li>Full Stack · Data · Cyber · QA</li>
+          <li>הכשרה בסגנון בוטקאמפ אינטנסיבי</li>
+          <li>מרצים מהתעשייה + תוכנית התמחות</li>
+          <li>פריסה מחיפה ועד אשקלון</li>
+        </ul>
       </div>
-      <div class="org-card tc reveal" style="animation-delay:.12s">
-        <span class="tag-org tc"><span class="d"></span> טק קריירה</span>
-        <div class="feat"><span class="fic">📍</span><div><h4>פריסה גיאוגרפית רחבה (מחיפה ועד אשקלון)</h4><p>לראשונה, אנחנו יוצאים מגבולות הקמפוס הפיזי ומנגישים את קורסי העילית של טק-קריירה לפריפריה החברתית והגיאוגרפית בישראל באופן נרחב.</p></div></div>
-        <div class="feat"><span class="fic">🔀</span><div><h4>מודל היברידי מותאם לאנשים עובדים</h4><p>הקורסים יתקיימו במתכונת היברידית גמישה (למידה מרחוק ומפגשים פרונטליים) לאורך כחצי שנה — ומאפשרים לסטודנטים לשמור על רצף תעסוקתי ולהמשיך לעבוד לפרנסתם במקביל לרכישת מקצוע העתיד.</p></div></div>
+      <div class="card" style="padding:26px 28px">
+        <span class="tag-org ub" style="margin-bottom:14px"><span class="d"></span> עולים ביחד</span>
+        <ul style="margin:0;padding-inline-start:18px;color:var(--muted);font-size:1rem;line-height:1.9">
+          <li>ליווי אקדמי ופיתוח מנהיגות</li>
+          <li>הכוונת סטודנטים מצטיינים</li>
+          <li>עתודה לניהול ולשירות הציבורי</li>
+          <li>קהילת בוגרים ורשת מנטורים</li>
+        </ul>
       </div>
     </div>
-    <div class="note"><b>תפקיד הסקשן:</b> תוכניות הדגל הקונקרטיות. הסקשן הזה דומה במבנה ל"ליבת הפעילות" — אם זה מרגיש חזרתי, אפשר לאחד אותם או להפוך אחד לטאבים.</div>
-  </div>
-</section>
 
-<!-- ============ השותפות ============ -->
-<section id="partner" class="partner">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>שתי עמותות, חזון אחד.</h2>
-      <p class="lead">השותפות מחברת מנוע הכשרה והשמה טכנולוגי עם עומק קהילתי, ליווי אקדמי ומודל מנהיגות — לטובת השתלבות חברתית וכלכלית רחבה.</p>
+    <div class="card reveal" style="max-width:560px;margin:0 auto;text-align:center;padding:42px 36px;border-top:4px solid var(--teal)">
+      <div style="font-size:2rem;margin-bottom:12px">📅</div>
+      <span class="eyebrow coral" style="display:block;margin-bottom:10px">הרשמה לוובינר</span>
+      <h3 style="font-size:1.55rem;font-weight:800;margin-bottom:8px">רוצים לדעת יותר?</h3>
+      <p style="color:var(--muted);font-size:1rem;margin-bottom:24px">השאירו פרטים ונחזור אליכם עם תאריך הוובינר הקרוב.</p>
+      <a class="btn-primary" href="#" style="background:var(--teal);box-shadow:0 14px 34px rgba(19,168,154,.35);display:inline-block;font-family:'Rubik';font-weight:700;font-size:1.05rem;padding:15px 36px;border-radius:13px;color:#fff">
+        להרשמה לוובינר
+      </a>
     </div>
-    <div class="partner-accordion reveal" style="animation-delay:.08s">
-      <div class="acc-item tc">
-        <input type="checkbox" id="acc-tc" class="acc-checkbox">
-        <label for="acc-tc" class="acc-trigger">
-          <div class="acc-trigger-label">
-            <span class="acc-orgtag tc"><span class="d"></span> טק קריירה</span>
-            <span class="acc-title">מנוע ההכשרה וההשמה</span>
-          </div>
-          <span class="acc-arrow" aria-hidden="true">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 4L6 8L10 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </label>
-        <div class="acc-body">
-          <div class="acc-inner">
-            <div class="acc-inner-pad">
-              <p>מביאה את מנוע ההכשרה הטכנולוגית בסגנון בוטקאמפ, הקמפוס והמעטפת התעסוקתית, החיבור הישיר לתעשייה ותוכניות ההתמחות שמובילות אל משרת הליבה.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="acc-item ub">
-        <input type="checkbox" id="acc-ub" class="acc-checkbox">
-        <label for="acc-ub" class="acc-trigger">
-          <div class="acc-trigger-label">
-            <span class="acc-orgtag ub"><span class="d"></span> עולים ביחד</span>
-            <span class="acc-title">העומק הקהילתי והאקדמי</span>
-          </div>
-          <span class="acc-arrow" aria-hidden="true">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 4L6 8L10 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </label>
-        <div class="acc-body">
-          <div class="acc-inner">
-            <div class="acc-inner-pad">
-            <p>מביאה את הליווי האקדמי, פיתוח המנהיגות הבכירה ומודל הבוגר, וגישור בין המצוינות האישית להשתלבות חברתית-כלכלית רחבה.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="note" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#eaf6f4"><b>תפקיד הסקשן:</b> מסביר את הדו-כיווניות בלי לבלבל. שאלה לבירור: רוצים גם לוגו/קישור נפרד לאתר עולים ביחד?</div>
-  </div>
-</section>
-
-<!-- ============ מודל הבוגר ============ -->
-<section id="stories">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>ההצלחה מדברת בעצמה.</h2>
-      <p class="lead">בוגרים בכירים שכבר השתלבו הופכים למודל, למנטורים ולגשר עבור הדור הבא.</p>
-    </div>
-    <div class="grid g-3">
-      <div class="quote reveal"><div class="mark">"</div><p>[ציטוט בוגר/ת — מאיפה הגיע/ה ומה השתנה אחרי ההשמה]</p><div class="who"><span class="av"></span><div><b>שם הבוגר/ת</b><span>תפקיד · חברה · מחזור</span></div></div></div>
-      <div class="quote reveal" style="animation-delay:.1s"><div class="mark">"</div><p>[ציטוט שני — דגש על ההתמחות כנקודת מפנה]</p><div class="who"><span class="av"></span><div><b>שם הבוגר/ת</b><span>תפקיד · חברה · מחזור</span></div></div></div>
-      <div class="quote reveal" style="animation-delay:.2s"><div class="mark">"</div><p>[ציטוט שלישי — דגש על המעטפת האישית / הקהילה]</p><div class="who"><span class="av"></span><div><b>שם הבוגר/ת</b><span>תפקיד · חברה · מחזור</span></div></div></div>
-    </div>
-    <div class="note"><b>תפקיד הסקשן:</b> הוכחה חברתית. עדיף תמונות אמיתיות, שמות חברות, ולפחות ציטוט אחד שמדגיש את ה-ROI התעסוקתי.</div>
-  </div>
-</section>
-
-
-<!-- ============ הצטרפות (מועמדים בלבד) ============ -->
-<section id="join" class="final">
-  <div class="wrap">
-    <div class="card reveal">
-      <div class="ic" style="width:56px;height:56px">🚀</div>
-      <span class="eyebrow coral">צעד הבא</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-top:10px">מוכנים להיכנס לתעשייה?</h2>
-      <p style="color:var(--muted);font-size:1.12rem;max-width:46ch;margin:14px auto 0">בדקו זכאות והגישו מועמדות. אנחנו כאן כדי ללוות אתכם מהיום הראשון ועד משרת הליבה הראשונה.</p>
-      <a class="btn-primary" href="#">להגיש מועמדות</a>
-    </div>
-    <div class="note" style="max-width:680px;margin-inline:auto"><b>תפקיד הסקשן:</b> CTA יחיד וממוקד למועמדים, בלי הסחות. אם בעתיד תרצו ערוץ לתורמים/שותפים — עדיף בדף נפרד.</div>
   </div>
 </section>
 
@@ -499,7 +415,7 @@
       </div>
       <div><b>מסלולים</b><a href="#">Full Stack</a><a href="#">Data</a><a href="#">Cyber</a><a href="#">QA</a></div>
       <div><b>העמותה</b><a href="#">אודות</a><a href="#">בוגרים</a><a href="#">השותפות</a><a href="#">צור קשר</a></div>
-      <div><b>הצטרפות</b><a href="#join">הגשת מועמדות</a></div>
+      <div><b>וובינר</b><a href="#webinar">הרשמה לוובינר</a></div>
     </div>
   </div>
 </footer>

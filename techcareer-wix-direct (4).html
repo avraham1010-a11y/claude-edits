@@ -142,7 +142,37 @@
   .g-4{grid-template-columns:repeat(4,1fr)}
   @media(max-width:900px){.g-3,.g-4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
-  @media(max-width:620px){#webinar .webinar-tracks{grid-template-columns:1fr}}
+  /* webinar section */
+  .webinar-tracks{
+    display:grid; grid-template-columns:1fr 1fr; gap:20px;
+    max-width:860px; margin:0 auto 40px;
+  }
+  @media(max-width:640px){.webinar-tracks{grid-template-columns:1fr}}
+  .wtrack{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:26px 24px; box-shadow:0 2px 14px rgba(11,34,48,.04);
+  }
+  .wtrack.tc{border-top:4px solid var(--teal)}
+  .wtrack.ub{border-top:4px solid var(--gold)}
+  .wtrack .tag-org{margin-bottom:16px}
+  .wtrack ul{
+    margin:0; padding-inline-start:20px;
+    color:var(--ink); font-size:1rem; line-height:2; font-weight:500;
+  }
+  .webinar-cta{
+    max-width:520px; margin:0 auto; text-align:center;
+    background:var(--card); border:1px solid var(--line); border-radius:20px;
+    padding:40px 32px; border-top:4px solid var(--teal);
+    box-shadow:0 2px 14px rgba(11,34,48,.04);
+  }
+  .webinar-btn{
+    display:inline-block; background:var(--teal); color:#fff;
+    font-family:"Rubik"; font-weight:700; font-size:1.05rem;
+    padding:15px 36px; border-radius:13px;
+    box-shadow:0 14px 34px rgba(19,168,154,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .webinar-btn:hover{transform:translateY(-3px); box-shadow:0 20px 44px rgba(19,168,154,.45)}
   .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     padding:30px; box-shadow:0 2px 14px rgba(11,34,48,.04); transition:transform .2s ease, box-shadow .2s ease}
   .card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(11,34,48,.1)}
@@ -367,24 +397,23 @@
 <section id="webinar" style="background:#fff;border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow teal">אירוע מקוון · ללא עלות</span>
-      <h2 style="margin-top:12px">הכירו את המיזם —<br><span style="color:var(--teal-d)">וובינר מידע פתוח</span></h2>
+      <h2>הכירו את המיזם —<br><span style="color:var(--teal-d)">וובינר מידע פתוח</span></h2>
       <p class="lead">טק קריירה ועולים ביחד מזמינים אתכם לוובינר בו נסביר על השותפות, על המסלולים הקיימים ועל הדרך מהיום הראשון ועד למשרת הליבה.</p>
     </div>
 
-    <div class="webinar-tracks reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:860px;margin:0 auto 48px">
-      <div class="card" style="padding:26px 28px">
-        <span class="tag-org tc" style="margin-bottom:14px"><span class="d"></span> טק קריירה</span>
-        <ul style="margin:0;padding-inline-start:18px;color:var(--muted);font-size:1rem;line-height:1.9">
+    <div class="webinar-tracks reveal">
+      <div class="wtrack tc">
+        <span class="tag-org tc"><span class="d"></span> טק קריירה</span>
+        <ul>
           <li>Full Stack · Data · Cyber · QA</li>
           <li>הכשרה בסגנון בוטקאמפ אינטנסיבי</li>
           <li>מרצים מהתעשייה + תוכנית התמחות</li>
           <li>פריסה מחיפה ועד אשקלון</li>
         </ul>
       </div>
-      <div class="card" style="padding:26px 28px">
-        <span class="tag-org ub" style="margin-bottom:14px"><span class="d"></span> עולים ביחד</span>
-        <ul style="margin:0;padding-inline-start:18px;color:var(--muted);font-size:1rem;line-height:1.9">
+      <div class="wtrack ub">
+        <span class="tag-org ub"><span class="d"></span> עולים ביחד</span>
+        <ul>
           <li>ליווי אקדמי ופיתוח מנהיגות</li>
           <li>הכוונת סטודנטים מצטיינים</li>
           <li>עתודה לניהול ולשירות הציבורי</li>
@@ -393,14 +422,12 @@
       </div>
     </div>
 
-    <div class="card reveal" style="max-width:560px;margin:0 auto;text-align:center;padding:42px 36px;border-top:4px solid var(--teal)">
+    <div class="webinar-cta reveal">
       <div style="font-size:2rem;margin-bottom:12px">📅</div>
       <span class="eyebrow coral" style="display:block;margin-bottom:10px">הרשמה לוובינר</span>
       <h3 style="font-size:1.55rem;font-weight:800;margin-bottom:8px">רוצים לדעת יותר?</h3>
       <p style="color:var(--muted);font-size:1rem;margin-bottom:24px">השאירו פרטים ונחזור אליכם עם תאריך הוובינר הקרוב.</p>
-      <a class="btn-primary" href="#" style="background:var(--teal);box-shadow:0 14px 34px rgba(19,168,154,.35);display:inline-block;font-family:'Rubik';font-weight:700;font-size:1.05rem;padding:15px 36px;border-radius:13px;color:#fff">
-        להרשמה לוובינר
-      </a>
+      <a class="webinar-btn" href="#">להרשמה לוובינר</a>
     </div>
   </div>
 </section>

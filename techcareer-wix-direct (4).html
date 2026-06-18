@@ -17,6 +17,7 @@
     --coral:#F25C3B;       /* אנושי / CTA */
     --gold:#D99A2B;        /* עולים ביחד */
     --gold-soft:#f8eed4;
+    --ub-red:#CC2B1E;      /* לוגו עולים ביחד */
     --paper:#FBF9F4;
     --card:#ffffff;
     --line:#e9e4d9;
@@ -142,21 +143,42 @@
   .g-4{grid-template-columns:repeat(4,1fr)}
   @media(max-width:900px){.g-3,.g-4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
-  /* in-card accordion (עולים ביחד) */
-  .incard-acc{border-top:1px solid var(--line); margin-top:18px; padding-top:4px}
+  /* in-card accordion — black rubrics */
+  .incard-acc{margin-top:18px}
+  .incard-item{margin-bottom:6px; border-radius:10px; overflow:hidden}
+  .org-acc-cb{display:none}
   .incard-trigger{
     display:flex; align-items:center; justify-content:space-between;
-    cursor:pointer; padding:12px 0; font-family:"Rubik"; font-weight:700;
-    font-size:1.02rem; color:var(--ink-2); user-select:none;
+    cursor:pointer; padding:13px 16px;
+    background:#111; color:#fff;
+    font-family:"Rubik"; font-weight:800; font-size:.97rem;
+    border-radius:10px; user-select:none;
+    transition:background .2s ease;
   }
-  .incard-arrow{font-size:1.2rem; color:var(--gold); transition:transform .25s ease; display:inline-block}
-  .acc-checkbox:checked + .incard-trigger .incard-arrow{transform:rotate(45deg)}
-  .incard-body{display:none}
-  .acc-checkbox:checked ~ .incard-body{display:block; padding-bottom:8px}
-  .incard-subtitle{font-family:"Rubik"; font-weight:700; font-size:.78rem;
-    letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin:12px 0 6px}
-  .incard-bold{font-weight:700; font-size:.98rem; color:var(--ink); line-height:1.65; margin-bottom:16px}
-  .incard-activity-head{font-family:"Rubik"; font-weight:800; font-size:1rem; color:var(--ink); margin:16px 0 6px}
+  .incard-trigger:hover{background:#1e1e1e}
+  .incard-arrow{
+    width:22px; height:22px; border-radius:50%;
+    border:1.5px solid rgba(255,255,255,.35);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; transition:transform .25s ease;
+    font-size:.75rem; font-style:normal;
+  }
+  .org-acc-cb:checked + .incard-trigger{border-radius:10px 10px 0 0; background:#1a1a1a}
+  .org-acc-cb:checked + .incard-trigger .incard-arrow{transform:rotate(45deg)}
+  .incard-body{
+    display:none; background:#f7f5f0;
+    border:1px solid #ddd; border-top:none;
+    border-radius:0 0 10px 10px; padding:18px 16px 14px;
+  }
+  .org-acc-cb:checked ~ .incard-body{display:block}
+  .incard-subtitle{font-family:"Rubik"; font-weight:700; font-size:.74rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--ub-red); margin:0 0 6px}
+  .incard-bold{font-weight:700; font-size:.96rem; color:var(--ink); line-height:1.65; margin-bottom:14px}
+  .incard-activity-head{font-family:"Rubik"; font-weight:800; font-size:.95rem; color:var(--ink); margin:14px 0 5px}
+  /* TC accordion uses teal accent on trigger */
+  .tc-acc .incard-trigger{background:#0d2a36}
+  .tc-acc .incard-trigger:hover{background:#13374a}
+  .tc-acc .org-acc-cb:checked + .incard-trigger{background:#0d2a36}
 
   /* webinar section */
   .webinar-tracks{
@@ -388,36 +410,92 @@
       <p class="lead">כל עמותה מביאה את ליבת המומחיות שלה — וביחד נוצרת שרשרת שלמה מהכשרה ועד השתלבות.</p>
     </div>
     <div class="grid g-2">
+      <!-- עולים ביחד — ימין (ראשון ב-RTL) -->
       <div class="org-card ub reveal">
         <span class="tag-org ub"><span class="d"></span> עולים ביחד</span>
         <h3>עולים ביחד</h3>
         <p style="color:var(--muted);font-size:1rem;margin:10px 0 20px;line-height:1.7">"עולים ביחד" היא עמותה חברתית ותיקה ומוערכת שנוסדה בשנת 2007, במטרה לסייע לאקדמאים מצטיינים בני הקהילה האתיופית לממש את הפוטנציאל שלהם בשוק העבודה הישראלי.</p>
-
-        <!-- אקורדיון: החזון שלנו -->
         <div class="incard-acc">
-          <input type="checkbox" id="ub-vision" class="acc-checkbox">
-          <label for="ub-vision" class="incard-trigger">
-            <span>החזון שלנו</span>
-            <span class="incard-arrow">&#65291;</span>
-          </label>
-          <div class="incard-body">
-            <p class="incard-subtitle">פעילות העמותה</p>
-            <p class="incard-bold">העמותה פועלת לשילוב מיטבי של ישראלים ממוצא אתיופי על ידי קידום מוביליות חברתית-כלכלית, כאינטרס לאומי ומתוך שאיפה לחברה ישראלית מגוונת, שוויונית וצודקת.</p>
-            <p class="incard-activity-head">פעילות</p>
-            <p style="color:var(--muted);font-size:.96rem;line-height:1.75;margin-bottom:10px">אנו פועלים לחיזוק החוסן המקצועי, הכלכלי והאישי של צעירים וצעירות ממוצא אתיופי, ומטפחים אותם כדור מנהיגות עתידי. פעילות הליבה שלנו כוללת:</p>
-            <div class="feat"><span class="fic">🔍</span><div><h4>איתור והשמה</h4><p>איתור צעירים, סטודנטים ואקדמאים בעלי פוטנציאל מנהיגות וקידום השתלבותם ההולמת במוסדות אקדמיים והשמה בארגונים מובילים.</p></div></div>
-            <div class="feat"><span class="fic">🛠️</span><div><h4>פיתוח כלים וקשרים</h4><p>מתן כלים מקצועיים להצטיינות, חיבור למנטורים בכירים מתנדבים, ובניית רשת חברתית-עסקית ענפה (רשת בוגרים של למעלה מ-1,700 איש).</p></div></div>
-            <div class="feat"><span class="fic">💡</span><div><h4>שינוי תפיסה-תודעתי</h4><p>פעילות אקטיבית להסרת חסמים חברתיים ותדמיתיים ושינוי תודעתי בקרב מעסיקים והציבור הרחב.</p></div></div>
+          <div class="incard-item">
+            <input type="checkbox" id="ub-vision" class="org-acc-cb">
+            <label for="ub-vision" class="incard-trigger">
+              <span>החזון שלנו</span>
+              <span class="incard-arrow">+</span>
+            </label>
+            <div class="incard-body">
+              <p class="incard-subtitle">פעילות העמותה</p>
+              <p class="incard-bold">העמותה פועלת לשילוב מיטבי של ישראלים ממוצא אתיופי על ידי קידום מוביליות חברתית-כלכלית, כאינטרס לאומי ומתוך שאיפה לחברה ישראלית מגוונת, שוויונית וצודקת.</p>
+              <p class="incard-activity-head">פעילות</p>
+              <p style="color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:10px">אנו פועלים לחיזוק החוסן המקצועי, הכלכלי והאישי של צעירים וצעירות ממוצא אתיופי, ומטפחים אותם כדור מנהיגות עתידי. פעילות הליבה שלנו כוללת:</p>
+              <div class="feat"><span class="fic">🔍</span><div><h4>איתור והשמה</h4><p>איתור צעירים, סטודנטים ואקדמאים בעלי פוטנציאל מנהיגות וקידום השתלבותם ההולמת במוסדות אקדמיים והשמה בארגונים מובילים.</p></div></div>
+              <div class="feat"><span class="fic">🛠️</span><div><h4>פיתוח כלים וקשרים</h4><p>מתן כלים מקצועיים להצטיינות, חיבור למנטורים בכירים מתנדבים, ובניית רשת חברתית-עסקית ענפה (רשת בוגרים של למעלה מ-1,700 איש).</p></div></div>
+              <div class="feat"><span class="fic">💡</span><div><h4>שינוי תפיסה-תודעתי</h4><p>פעילות אקטיבית להסרת חסמים חברתיים ותדמיתיים ושינוי תודעתי בקרב מעסיקים והציבור הרחב.</p></div></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="org-card tc reveal" style="animation-delay:.12s">
+
+      <!-- טק קריירה — שמאל (שני ב-RTL) -->
+      <div class="org-card tc reveal" style="animation-delay:.1s">
         <span class="tag-org tc"><span class="d"></span> טק קריירה</span>
         <h3>טק קריירה</h3>
-        <div class="role">מנוע ההכשרה הטכנולוגית וההשמה</div>
-        <div class="feat"><span class="fic">💻</span><div><h4>הכשרות בסגנון Bootcamp</h4><p>קורסי פיתוח אינטנסיביים: Full Stack, Data, Cyber ו-QA.</p></div></div>
-        <div class="feat"><span class="fic">🏛️</span><div><h4>קמפוס ומעטפת רחבה</h4><p>סביבת לימוד אינטנסיבית המדמה סביבת עבודה, בצד המעשי והטכני.</p></div></div>
-        <div class="feat"><span class="fic">🚀</span><div><h4>חיבור לתעשייה והשמה</h4><p>מרצים מהשורה הראשונה ותוכניות התמחות שמובילות למשרה.</p></div></div>
+        <p style="color:var(--muted);font-size:1rem;margin:10px 0 20px;line-height:1.7">העמותה הוקמה בשנת 2002 על ידי אשר אליאס ושותפים מקרב בני הקהילה האתיופית, מתוך הבנה שהמפתח למובילות חברתית וכלכלית עובר דרך תעשיית הטכנולוגיה.</p>
+        <div class="incard-acc tc-acc">
+
+          <div class="incard-item">
+            <input type="checkbox" id="tc-about" class="org-acc-cb">
+            <label for="tc-about" class="incard-trigger">
+              <span>על טק קריירה</span>
+              <span class="incard-arrow">+</span>
+            </label>
+            <div class="incard-body">
+              <p style="color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:8px"><strong>קהל יעד:</strong> צעירים וצעירות בני הקהילה האתיופית בעלי פוטנציאל גבוה, השואפים להשתלב בעולמות הטכנולוגיה.</p>
+              <p style="color:var(--muted);font-size:.93rem;line-height:1.7;margin:0"><strong>המטרה העליונה:</strong> צמצום הפער הדיגיטלי והכלכלי בישראל, ויצירת מובילות חברתית-כלכלית עבור בוגרינו באמצעות שילובם במשרות ליבה איכותיות בתעשיית ההייטק הישראלית.</p>
+            </div>
+          </div>
+
+          <div class="incard-item">
+            <input type="checkbox" id="tc-what" class="org-acc-cb">
+            <label for="tc-what" class="incard-trigger">
+              <span>מה אנחנו עושים?</span>
+              <span class="incard-arrow">+</span>
+            </label>
+            <div class="incard-body">
+              <div class="feat"><span class="fic">💻</span><div><h4>הכשרות טכנולוגיות (Bootcamps)</h4><p>קורסי פיתוח ותקשורת אינטנסיביים (Full Stack, QA, Cyber, Data) המועברים על ידי מרצים מהתעשייה.</p></div></div>
+              <div class="feat"><span class="fic">🎯</span><div><h4>מעטפת פיתוח אישי ותעסוקתי</h4><p>סדנאות רכות, כתיבת קורות חיים, מיומנויות פרזנטציה וסימולציות ראיונות עבודה.</p></div></div>
+              <div class="feat"><span class="fic">🔗</span><div><h4>תוכניות התמחות מובנות</h4><p>שילוב הסטודנטים בהתמחויות מעשיות (Hands-on) כבר במהלך הקורס או מיד בסיומו.</p></div></div>
+              <div class="feat"><span class="fic">🚀</span><div><h4>קשרי מעסיקים והשמה אקטיבית</h4><p>ניהול קשרים ישיר מול חברות הייטק, וליווי צמוד עד לחתימה על חוזה העסקה.</p></div></div>
+            </div>
+          </div>
+
+          <div class="incard-item">
+            <input type="checkbox" id="tc-diff" class="org-acc-cb">
+            <label for="tc-diff" class="incard-trigger">
+              <span>הליבה והבידול שלנו</span>
+              <span class="incard-arrow">+</span>
+            </label>
+            <div class="incard-body">
+              <div class="feat"><span class="fic">🏛️</span><div><h4>מודל 360 מעלות</h4><p>קמפוס ייחודי הכולל פנימייה, קצב לימודים תובעני המדמה הייטק אמיתי, ולמידה מעשית.</p></div></div>
+              <div class="feat"><span class="fic">🤝</span><div><h4>חיבור בלתי אמצעי לתעשייה</h4><p>מרצים, מנטורים ושופטים מלב ההייטק — Bynet, Cognizant, NESS ועוד. הסטודנטים נושמים הייטק מהיום הראשון.</p></div></div>
+              <div class="feat"><span class="fic">🌉</span><div><h4>התמחות כגשר לג'וניורים</h4><p>פותרת את "מלכודת הג'וניור" — דרישה לניסיון במשרות ראשוניות — ומעניקה יתרון תחרותי עצום.</p></div></div>
+            </div>
+          </div>
+
+          <div class="incard-item">
+            <input type="checkbox" id="tc-role" class="org-acc-cb">
+            <label for="tc-role" class="incard-trigger">
+              <span>תפקידנו במיזם</span>
+              <span class="incard-arrow">+</span>
+            </label>
+            <div class="incard-body">
+              <p style="color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:12px">במסגרת הזכייה במכרז, טק קריירה אחראית על מסלול א׳ — מסלול ההכשרה הטכנולוגי:</p>
+              <div class="feat"><span class="fic">📍</span><div><h4>פריסה גיאוגרפית רחבה</h4><p>מחיפה ועד אשקלון — לראשונה מחוץ לקמפוס הפיזי, נגישות לפריפריה החברתית והגיאוגרפית.</p></div></div>
+              <div class="feat"><span class="fic">🔀</span><div><h4>מודל היברידי לאנשים עובדים</h4><p>שילוב למידה מרחוק ומפגשים פרונטליים לאורך כחצי שנה — ניתן לעבוד במקביל.</p></div></div>
+              <div class="feat"><span class="fic">💡</span><div><h4>תוכנית חשיפה (Inspiration)</h4><p>מנגישה מידע על עולם ההייטק, מנתצת מיתוסים ומעודדת צעירים מוכשרים ללמוד בתחום.</p></div></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
     <div class="note"><b>תפקיד הסקשן:</b> תמונת-על של מה כל עמותה עושה — לפני שצוללים ליתרונות הספציפיים בסקשנים הבאים.</div>

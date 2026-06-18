@@ -110,7 +110,7 @@
   .badge b{color:#7fe7dc}
   .hero h1{font-size:clamp(2.5rem,5.6vw,4rem); font-weight:900; max-width:15ch}
   .hero h1 em{font-style:normal; color:#ff8b6e}
-  .hero .sub{font-size:1.22rem; color:#cfe0e4; max-width:50ch; margin:22px 0 32px}
+  .hero .sub{font-size:1rem; color:#cfe0e4; max-width:62ch; margin:22px 0 32px; line-height:1.75}
   .hero .btn-primary{background:var(--coral); color:#fff; font-family:"Rubik"; font-weight:700; font-size:1.05rem;
     padding:16px 34px; border-radius:13px; display:inline-block; box-shadow:0 14px 36px rgba(242,92,59,.45);
     transition:transform .15s ease, box-shadow .15s ease}
@@ -142,6 +142,22 @@
   .g-4{grid-template-columns:repeat(4,1fr)}
   @media(max-width:900px){.g-3,.g-4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.g-2,.g-3,.g-4{grid-template-columns:1fr}}
+  /* in-card accordion (עולים ביחד) */
+  .incard-acc{border-top:1px solid var(--line); margin-top:18px; padding-top:4px}
+  .incard-trigger{
+    display:flex; align-items:center; justify-content:space-between;
+    cursor:pointer; padding:12px 0; font-family:"Rubik"; font-weight:700;
+    font-size:1.02rem; color:var(--ink-2); user-select:none;
+  }
+  .incard-arrow{font-size:1.2rem; color:var(--gold); transition:transform .25s ease; display:inline-block}
+  .acc-checkbox:checked + .incard-trigger .incard-arrow{transform:rotate(45deg)}
+  .incard-body{display:none}
+  .acc-checkbox:checked ~ .incard-body{display:block; padding-bottom:8px}
+  .incard-subtitle{font-family:"Rubik"; font-weight:700; font-size:.78rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin:12px 0 6px}
+  .incard-bold{font-weight:700; font-size:.98rem; color:var(--ink); line-height:1.65; margin-bottom:16px}
+  .incard-activity-head{font-family:"Rubik"; font-weight:800; font-size:1rem; color:var(--ink); margin:16px 0 6px}
+
   /* webinar section */
   .webinar-tracks{
     display:grid; grid-template-columns:1fr 1fr; gap:20px;
@@ -336,7 +352,7 @@
     <div class="reveal" style="animation-delay:.05s">
       <div class="badge">שותפות לשינוי · <b>טק קריירה</b> × <b>עולים ביחד</b></div>
       <h1>מהיום הראשון — <em>לקריירה אמיתית</em> בתעשייה.</h1>
-      <p class="sub">בוטקאמפ טכנולוגי אינטנסיבי עם מרצים מהשורה הראשונה בתעשייה, מעטפת אישית ותוכנית התמחות מובנית — שמעניקה לכם את הניסיון שפותח את הדלת למשרת הליבה הראשונה.</p>
+      <p class="sub">משרד העבודה רואה בשילובם של יוצאי אתיופיה בשוק התעסוקה יעד לאומי, חברתי וכלכלי. מתוך חזון לפיתוח הון אנושי מגוון, שוויוני ומשגשג, משרד העבודה פועל לאפשר לכל אדם למצות את פוטנציאל ההשתכרות שלו, תוך הובלת משק תחרותי ופריצת תקרות זכוכית לעבר משרות איכותיות ומתגמלות.<br><br>במסגרת זו, ובהתאם להחלטת הממשלה החדשה 3243, מוביל המשרד העבודה מהלך מרכזי לקידום ושילוב יוצאי אתיופיה בתעסוקה איכותית, במסגרתו יפעלו 2 מיזמים משותפים עם עמותות מובילות מתוך הקהילה. המשרד מוביל את השותפות הרב-מכזרית, תוך מתן מעטפת תמיכה מקיפה הכוללת מימון וסבסוד משמעותיים של מסלולי מצוינות להשתלבות בלימודים גבוהים, בענפי ההייטק, ובתעסוקה איכותית במשק כולו.<br><br>במיזמים המשותפים, ישתתפו מעל 2,500 משתתפים חדשים בכל שנה, ויזכו למערך שלם של כלי סיוע בפריסה ארצית.</p>
       <a class="btn-primary" href="#join">להגיש מועמדות</a>
     </div>
     <div class="hero-art reveal" style="animation-delay:.2s">
@@ -375,10 +391,25 @@
       <div class="org-card ub reveal">
         <span class="tag-org ub"><span class="d"></span> עולים ביחד</span>
         <h3>עולים ביחד</h3>
-        <div class="role">פריצת התקרה האקדמית ליוצאי אתיופיה</div>
-        <div class="feat"><span class="fic">🎓</span><div><h4>הכוונה וליווי למצטיינים</h4><p>ליווי מותאם למצטיינים בתחומי הרפואה, המדעים והתארים המתקדמים.</p></div></div>
-        <div class="feat"><span class="fic">👔</span><div><h4>פיתוח הנהגה בכירה</h4><p>הכשרת מנהלים מנוסים לתפקידי דירקטוריון, בעבודה עם מנטורים מהתחום.</p></div></div>
-        <div class="feat"><span class="fic">🌟</span><div><h4>מודל הבוגר</h4><p>התבססות על בוגרים בכירים עם סיפורי הצלחה בקהילה.</p></div></div>
+        <p style="color:var(--muted);font-size:1rem;margin:10px 0 20px;line-height:1.7">"עולים ביחד" היא עמותה חברתית ותיקה ומוערכת שנוסדה בשנת 2007, במטרה לסייע לאקדמאים מצטיינים בני הקהילה האתיופית לממש את הפוטנציאל שלהם בשוק העבודה הישראלי.</p>
+
+        <!-- אקורדיון: החזון שלנו -->
+        <div class="incard-acc">
+          <input type="checkbox" id="ub-vision" class="acc-checkbox">
+          <label for="ub-vision" class="incard-trigger">
+            <span>החזון שלנו</span>
+            <span class="incard-arrow">&#65291;</span>
+          </label>
+          <div class="incard-body">
+            <p class="incard-subtitle">פעילות העמותה</p>
+            <p class="incard-bold">העמותה פועלת לשילוב מיטבי של ישראלים ממוצא אתיופי על ידי קידום מוביליות חברתית-כלכלית, כאינטרס לאומי ומתוך שאיפה לחברה ישראלית מגוונת, שוויונית וצודקת.</p>
+            <p class="incard-activity-head">פעילות</p>
+            <p style="color:var(--muted);font-size:.96rem;line-height:1.75;margin-bottom:10px">אנו פועלים לחיזוק החוסן המקצועי, הכלכלי והאישי של צעירים וצעירות ממוצא אתיופי, ומטפחים אותם כדור מנהיגות עתידי. פעילות הליבה שלנו כוללת:</p>
+            <div class="feat"><span class="fic">🔍</span><div><h4>איתור והשמה</h4><p>איתור צעירים, סטודנטים ואקדמאים בעלי פוטנציאל מנהיגות וקידום השתלבותם ההולמת במוסדות אקדמיים והשמה בארגונים מובילים.</p></div></div>
+            <div class="feat"><span class="fic">🛠️</span><div><h4>פיתוח כלים וקשרים</h4><p>מתן כלים מקצועיים להצטיינות, חיבור למנטורים בכירים מתנדבים, ובניית רשת חברתית-עסקית ענפה (רשת בוגרים של למעלה מ-1,700 איש).</p></div></div>
+            <div class="feat"><span class="fic">💡</span><div><h4>שינוי תפיסה-תודעתי</h4><p>פעילות אקטיבית להסרת חסמים חברתיים ותדמיתיים ושינוי תודעתי בקרב מעסיקים והציבור הרחב.</p></div></div>
+          </div>
+        </div>
       </div>
       <div class="org-card tc reveal" style="animation-delay:.12s">
         <span class="tag-org tc"><span class="d"></span> טק קריירה</span>

@@ -181,9 +181,7 @@
   .incard-bold{font-weight:700; font-size:.96rem; color:var(--ink); line-height:1.65; margin-bottom:14px}
   .incard-activity-head{font-family:"Rubik"; font-weight:800; font-size:.95rem; color:var(--ink); margin:14px 0 5px}
   /* TC accordion uses teal accent on trigger */
-  .tc-acc .incard-trigger{background:#0d2a36}
-  .tc-acc .incard-trigger:hover{background:#13374a}
-  .tc-acc .org-acc-cb:checked + .incard-trigger{background:#0d2a36}
+  /* TC accordion uses same black as UB */
 
   /* ---- scattered logo watermarks ---- */
   .logo-scatter{position:absolute; pointer-events:none; user-select:none; z-index:0}
@@ -444,13 +442,29 @@
               <span class="incard-arrow">+</span>
             </label>
             <div class="incard-body">
-              <p class="incard-subtitle">פעילות העמותה</p>
               <p class="incard-bold">העמותה פועלת לשילוב מיטבי של ישראלים ממוצא אתיופי על ידי קידום מוביליות חברתית-כלכלית, כאינטרס לאומי ומתוך שאיפה לחברה ישראלית מגוונת, שוויונית וצודקת.</p>
-              <p class="incard-activity-head">פעילות</p>
-              <p style="color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:10px">אנו פועלים לחיזוק החוסן המקצועי, הכלכלי והאישי של צעירים וצעירות ממוצא אתיופי, ומטפחים אותם כדור מנהיגות עתידי. פעילות הליבה שלנו כוללת:</p>
+            </div>
+          </div>
+          <div class="incard-item">
+            <input type="checkbox" id="ub-activity" class="org-acc-cb">
+            <label for="ub-activity" class="incard-trigger">
+              <span>פעילות הליבה</span>
+              <span class="incard-arrow">+</span>
+            </label>
+            <div class="incard-body">
+              <p style="color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:10px">אנו פועלים לחיזוק החוסן המקצועי, הכלכלי והאישי של צעירים וצעירות ממוצא אתיופי, ומטפחים אותם כדור מנהיגות עתידי:</p>
               <div class="feat"><span class="fic">🔍</span><div><h4>איתור והשמה</h4><p>איתור צעירים, סטודנטים ואקדמאים בעלי פוטנציאל מנהיגות וקידום השתלבותם ההולמת במוסדות אקדמיים והשמה בארגונים מובילים.</p></div></div>
               <div class="feat"><span class="fic">🛠️</span><div><h4>פיתוח כלים וקשרים</h4><p>מתן כלים מקצועיים להצטיינות, חיבור למנטורים בכירים מתנדבים, ובניית רשת חברתית-עסקית ענפה (רשת בוגרים של למעלה מ-1,700 איש).</p></div></div>
-              <div class="feat"><span class="fic">💡</span><div><h4>שינוי תפיסה-תודעתי</h4><p>פעילות אקטיבית להסרת חסמים חברתיים ותדמיתיים ושינוי תודעתי בקרב מעסיקים והציבור הרחב.</p></div></div>
+            </div>
+          </div>
+          <div class="incard-item">
+            <input type="checkbox" id="ub-change" class="org-acc-cb">
+            <label for="ub-change" class="incard-trigger">
+              <span>שינוי תפיסה-תודעתי</span>
+              <span class="incard-arrow">+</span>
+            </label>
+            <div class="incard-body">
+              <div class="feat"><span class="fic">💡</span><div><h4>הסרת חסמים</h4><p>פעילות אקטיבית להסרת חסמים חברתיים ותדמיתיים ושינוי תודעתי בקרב מעסיקים והציבור הרחב.</p></div></div>
             </div>
           </div>
         </div>
@@ -461,7 +475,7 @@
         <span class="tag-org tc"><span class="d"></span> טק קריירה</span>
         <h3>טק קריירה</h3>
         <p style="color:var(--muted);font-size:1rem;margin:10px 0 20px;line-height:1.7">העמותה הוקמה בשנת 2002 על ידי אשר אליאס ושותפים מקרב בני הקהילה האתיופית, מתוך הבנה שהמפתח למובילות חברתית וכלכלית עובר דרך תעשיית הטכנולוגיה.</p>
-        <div class="incard-acc tc-acc">
+        <div class="incard-acc">
 
           <div class="incard-item">
             <input type="checkbox" id="tc-about" class="org-acc-cb">
@@ -529,7 +543,7 @@
   <img class="logo-scatter lg-4" src="ub-logo-circle.png" alt="" aria-hidden="true" style="bottom:40px;inset-inline-start:-15px;transform:rotate(-10deg)">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>הכירו את המיזם —<br><span style="color:var(--teal-d)">וובינר מידע פתוח</span></h2>
+      <h2>הכירו את המיזם —<br><span style="color:var(--green)">וובינר מידע פתוח</span></h2>
       <p class="lead">טק קריירה ועולים ביחד מזמינים אתכם לוובינר בו נסביר על השותפות, על המסלולים הקיימים ועל הדרך מהיום הראשון ועד למשרת הליבה.</p>
     </div>
 

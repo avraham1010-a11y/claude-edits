@@ -11,17 +11,22 @@
   :root{
     --ink:#0B2230;
     --ink-2:#163b50;
+    --green:#1D7A35;       /* עולים ביחד logo green */
+    --green-d:#155226;
+    --green-soft:#e6f4ea;
+    --red:#CC2B1E;         /* עולים ביחד logo red arrow */
+    --red-soft:#fdecea;
     --teal:#13A89A;        /* טק קריירה */
     --teal-d:#0c7d72;
     --teal-soft:#e3f4f1;
-    --coral:#F25C3B;       /* אנושי / CTA */
-    --gold:#D99A2B;        /* עולים ביחד */
+    --coral:#F25C3B;
+    --gold:#D99A2B;
     --gold-soft:#f8eed4;
-    --ub-red:#CC2B1E;      /* לוגו עולים ביחד */
-    --paper:#FBF9F4;
+    --ub-red:#CC2B1E;
+    --paper:#F7FAF7;       /* faint green tint */
     --card:#ffffff;
-    --line:#e9e4d9;
-    --muted:#5d6b72;
+    --line:#d4e8d8;
+    --muted:#4a6652;
     --note-bg:#fff7e6;
     --note-bd:#e9c87a;
     --radius:20px;
@@ -34,7 +39,7 @@
     margin:0; background:var(--paper); color:var(--ink);
     font-family:"Assistant",system-ui,sans-serif; font-size:18px; line-height:1.7;
     -webkit-font-smoothing:antialiased;
-    background-image:radial-gradient(circle at 1px 1px, rgba(11,34,48,.035) 1px, transparent 0);
+    background-image:radial-gradient(circle at 1px 1px, rgba(29,122,53,.06) 1px, transparent 0);
     background-size:26px 26px;
   }
   h1,h2,h3,h4,.display{font-family:"Rubik",sans-serif; line-height:1.08; letter-spacing:-0.02em; margin:0}
@@ -42,7 +47,7 @@
   a{color:inherit; text-decoration:none}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 26px}
   .eyebrow{font-family:"Rubik";font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
-  .eyebrow.teal{color:var(--teal-d)} .eyebrow.gold{color:var(--gold)} .eyebrow.coral{color:var(--coral)}
+  .eyebrow.teal{color:var(--green-d)} .eyebrow.gold{color:var(--green)} .eyebrow.coral{color:var(--red)}
 
   /* ---- entrance animation ---- */
   .reveal{opacity:0; transform:translateY(22px); animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
@@ -81,12 +86,12 @@
 
   /* ---- HERO ---- */
   .hero{position:relative; color:#fff; overflow:hidden; padding:0;
-    background:var(--ink)}
+    background:var(--green-d)}
   .hero::before{content:""; position:absolute; inset:0;
     background:
-      radial-gradient(680px 480px at 82% 8%, rgba(19,168,154,.55), transparent 60%),
-      radial-gradient(620px 520px at 6% 96%, rgba(242,92,59,.42), transparent 58%),
-      radial-gradient(900px 700px at 50% -20%, rgba(217,154,43,.20), transparent 60%);
+      radial-gradient(680px 480px at 88% 5%, rgba(29,122,53,.7), transparent 55%),
+      radial-gradient(620px 520px at 5% 95%, rgba(204,43,30,.45), transparent 55%),
+      radial-gradient(900px 700px at 45% -10%, rgba(255,255,255,.08), transparent 60%);
     pointer-events:none}
   .hero::after{content:""; position:absolute; inset:0; opacity:.5;
     background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.10) 1px, transparent 0);
@@ -108,14 +113,14 @@
   .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.09);
     border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:8px 16px;
     font-weight:600; font-size:.9rem; margin-bottom:26px}
-  .badge b{color:#7fe7dc}
+  .badge b{color:#a8e8b4}
   .hero h1{font-size:clamp(2.5rem,5.6vw,4rem); font-weight:900; max-width:15ch}
   .hero h1 em{font-style:normal; color:#ff8b6e}
-  .hero .sub{font-size:1rem; color:#cfe0e4; max-width:62ch; margin:22px 0 32px; line-height:1.75}
-  .hero .btn-primary{background:var(--coral); color:#fff; font-family:"Rubik"; font-weight:700; font-size:1.05rem;
-    padding:16px 34px; border-radius:13px; display:inline-block; box-shadow:0 14px 36px rgba(242,92,59,.45);
+  .hero .sub{font-size:1rem; color:#cde8d2; max-width:62ch; margin:22px 0 32px; line-height:1.75}
+  .hero .btn-primary{background:var(--red); color:#fff; font-family:"Rubik"; font-weight:700; font-size:1.05rem;
+    padding:16px 34px; border-radius:13px; display:inline-block; box-shadow:0 14px 36px rgba(204,43,30,.45);
     transition:transform .15s ease, box-shadow .15s ease}
-  .hero .btn-primary:hover{transform:translateY(-3px); box-shadow:0 20px 46px rgba(242,92,59,.55)}
+  .hero .btn-primary:hover{transform:translateY(-3px); box-shadow:0 20px 46px rgba(204,43,30,.55)}
 
   /* hero visual */
   .hero-art{position:relative; min-height:380px}
@@ -172,13 +177,20 @@
   }
   .org-acc-cb:checked ~ .incard-body{display:block}
   .incard-subtitle{font-family:"Rubik"; font-weight:700; font-size:.74rem;
-    letter-spacing:.12em; text-transform:uppercase; color:var(--ub-red); margin:0 0 6px}
+    letter-spacing:.12em; text-transform:uppercase; color:var(--green); margin:0 0 6px}
   .incard-bold{font-weight:700; font-size:.96rem; color:var(--ink); line-height:1.65; margin-bottom:14px}
   .incard-activity-head{font-family:"Rubik"; font-weight:800; font-size:.95rem; color:var(--ink); margin:14px 0 5px}
   /* TC accordion uses teal accent on trigger */
   .tc-acc .incard-trigger{background:#0d2a36}
   .tc-acc .incard-trigger:hover{background:#13374a}
   .tc-acc .org-acc-cb:checked + .incard-trigger{background:#0d2a36}
+
+  /* ---- scattered logo watermarks ---- */
+  .logo-scatter{position:absolute; pointer-events:none; user-select:none; z-index:0}
+  .logo-scatter img{display:block; opacity:.07; filter:grayscale(20%)}
+  .logo-scatter.lg-1{width:160px} .logo-scatter.lg-2{width:100px} .logo-scatter.lg-3{width:220px}
+  .logo-scatter.lg-4{width:80px}  .logo-scatter.lg-5{width:130px} .logo-scatter.lg-6{width:90px}
+  section{position:relative; overflow:hidden}
 
   /* webinar section */
   .webinar-tracks{
@@ -191,7 +203,7 @@
     padding:26px 24px; box-shadow:0 2px 14px rgba(11,34,48,.04);
   }
   .wtrack.tc{border-top:4px solid var(--teal)}
-  .wtrack.ub{border-top:4px solid var(--gold)}
+  .wtrack.ub{border-top:4px solid var(--green)}
   .wtrack .tag-org{margin-bottom:16px}
   .wtrack ul{
     margin:0; padding-inline-start:20px;
@@ -200,17 +212,17 @@
   .webinar-cta{
     max-width:520px; margin:0 auto; text-align:center;
     background:var(--card); border:1px solid var(--line); border-radius:20px;
-    padding:40px 32px; border-top:4px solid var(--teal);
+    padding:40px 32px; border-top:4px solid var(--green);
     box-shadow:0 2px 14px rgba(11,34,48,.04);
   }
   .webinar-btn{
-    display:inline-block; background:var(--teal); color:#fff;
+    display:inline-block; background:var(--green); color:#fff;
     font-family:"Rubik"; font-weight:700; font-size:1.05rem;
     padding:15px 36px; border-radius:13px;
-    box-shadow:0 14px 34px rgba(19,168,154,.35);
+    box-shadow:0 14px 34px rgba(29,122,53,.35);
     transition:transform .15s ease, box-shadow .15s ease;
   }
-  .webinar-btn:hover{transform:translateY(-3px); box-shadow:0 20px 44px rgba(19,168,154,.45)}
+  .webinar-btn:hover{transform:translateY(-3px); box-shadow:0 20px 44px rgba(29,122,53,.45)}
   .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     padding:30px; box-shadow:0 2px 14px rgba(11,34,48,.04); transition:transform .2s ease, box-shadow .2s ease}
   .card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(11,34,48,.1)}
@@ -223,14 +235,14 @@
   .tag-org{display:inline-flex;align-items:center;gap:8px;font-family:"Rubik";font-weight:700;font-size:.82rem;
     letter-spacing:.04em;border-radius:999px;padding:6px 14px;margin-bottom:18px}
   .tag-org.tc{background:var(--teal-soft); color:var(--teal-d)}
-  .tag-org.ub{background:var(--gold-soft); color:#9a6f12}
+  .tag-org.ub{background:var(--green-soft); color:var(--green-d)}
   .tag-org .d{width:9px;height:9px;border-radius:50%}
-  .tag-org.tc .d{background:var(--teal)} .tag-org.ub .d{background:var(--gold)}
+  .tag-org.tc .d{background:var(--teal)} .tag-org.ub .d{background:var(--green)}
 
   .org-card{border-radius:var(--radius); padding:34px; background:var(--card); border:1px solid var(--line);
     box-shadow:0 2px 14px rgba(11,34,48,.04)}
   .org-card.tc{border-top:5px solid var(--teal)}
-  .org-card.ub{border-top:5px solid var(--gold)}
+  .org-card.ub{border-top:5px solid var(--green)}
   .org-card h3{font-size:1.5rem; font-weight:800; margin-bottom:6px}
   .org-card .role{font-weight:700; font-size:.95rem; margin-bottom:18px}
   .org-card.tc .role{color:var(--teal-d)} .org-card.ub .role{color:#9a6f12}
@@ -354,6 +366,10 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero">
+  <!-- לוגואים דקורטיביים בהירו -->
+  <img class="logo-scatter lg-3" src="ub-logo-flat.png" alt="" aria-hidden="true" style="top:80px;inset-inline-end:2%;opacity:.06;transform:rotate(6deg);filter:brightness(10)">
+  <img class="logo-scatter lg-6" src="ub-logo-circle.png" alt="" aria-hidden="true" style="bottom:60px;inset-inline-start:1%;opacity:.08;transform:rotate(-12deg);filter:brightness(10)">
+  <img class="logo-scatter lg-2" src="ub-logo-flat.png" alt="" aria-hidden="true" style="top:30%;inset-inline-end:38%;opacity:.04;filter:brightness(10)">
   <div class="wrap logobar reveal">
     <div class="row">
       <!-- ימין -->
@@ -388,6 +404,9 @@
 
 <!-- ============ המשימה ============ -->
 <section id="mission">
+  <!-- לוגואים דקורטיביים -->
+  <img class="logo-scatter lg-3" src="ub-logo-flat.png" alt="" aria-hidden="true" style="top:-30px;inset-inline-end:-40px;transform:rotate(12deg)">
+  <img class="logo-scatter lg-2" src="ub-logo-circle.png" alt="" aria-hidden="true" style="bottom:20px;inset-inline-start:-20px;transform:rotate(-8deg)">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>הפער הדיגיטלי הוא קודם כול פער של הזדמנויות.</h2>
@@ -404,6 +423,8 @@
 
 <!-- ============ ליבת הפעילות ============ -->
 <section id="core" style="background:#fff;border-block:1px solid var(--line)">
+  <img class="logo-scatter lg-1" src="ub-logo-flat.png" alt="" aria-hidden="true" style="top:40px;inset-inline-start:-50px;transform:rotate(-15deg)">
+  <img class="logo-scatter lg-4" src="ub-logo-circle.png" alt="" aria-hidden="true" style="bottom:30px;inset-inline-end:-10px;transform:rotate(20deg)">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>שני מנועים, מטרה אחת.</h2>
@@ -504,6 +525,8 @@
 
 <!-- ============ וובינר ============ -->
 <section id="webinar" style="background:#fff;border-top:1px solid var(--line)">
+  <img class="logo-scatter lg-5" src="ub-logo-flat.png" alt="" aria-hidden="true" style="top:20px;inset-inline-end:-30px;transform:rotate(8deg)">
+  <img class="logo-scatter lg-4" src="ub-logo-circle.png" alt="" aria-hidden="true" style="bottom:40px;inset-inline-start:-15px;transform:rotate(-10deg)">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>הכירו את המיזם —<br><span style="color:var(--teal-d)">וובינר מידע פתוח</span></h2>
